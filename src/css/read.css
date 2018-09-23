@@ -1,0 +1,273 @@
+#article
+{
+    background-color: rgba(43, 43, 43, 0.8);
+    width: 100%;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.15em;
+    color: whitesmoke;
+    border-radius: 5px;
+    box-shadow: 13px 13px 15px 1px rgba(0,0,0,0.75);
+    padding-bottom: 30px;
+}
+.title_article
+{
+    height: 70px;
+    border-bottom: 1px solid #dd0322;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2.3em;
+    color: #dd0322;
+    font-weight: 800;
+    text-align: left;
+    line-height: 70px;
+    padding-left: 30px;
+}
+#text
+{
+    padding: 30px;
+    text-align: left;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+#text img {
+    box-shadow: 0px 0px 65px 24px rgba(0, 0, 0, 0.75);
+}
+.metadata
+{
+    font-style: italic;
+    text-align: right;
+}
+.to_write_comment{
+    width: fit-content;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    margin: auto;
+    display: block;
+    color: #dd0022;
+    font-size: 0.8em;
+    font-family: font_metal;
+    cursor: pointer;
+    border: 2px solid;
+    padding: 5px;
+    border-radius: 7px;
+    margin-top: 7px;
+    margin-bottom: 10px;
+    transition: all 400ms;
+}
+
+.to_write_comment:hover {
+    border-color: rgb(38, 38, 38);
+    background-color: #dd0021a9;
+    color: rgb(38, 38, 38);
+}
+
+.to_write_comment p {
+    width: 100%;
+    height: 100%;
+    font-size: larger;
+}
+#disp_comments {
+    color: #acacac;
+}
+.comment_el_1 {
+    background-color: rgb(31, 31, 31);
+    margin-left: 5%;
+    margin-right: 40%;
+    margin-bottom: 25px;
+    border-radius: 6px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    box-shadow: 13px 13px 14px 0px rgba(0, 0, 0, 0.42);
+}
+.comment_el_2 {
+    background-color: rgb(31, 31, 31);
+    margin-left: 40%;
+    margin-right: 5%;
+    margin-bottom: 25px;
+    border-radius: 6px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    box-shadow: -13px 13px 14px 0px rgba(0, 0, 0, 0.42);
+}
+.comment_author {
+    font-size: 1.5em;
+    line-height: 1.44444;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+    padding: 0 0 0 15px;
+    font-style: normal;
+    color: #dd0322;
+    border-left: 3px solid #5a5a5a;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: all 400ms;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.comment_body {
+    text-indent: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.comment_date {
+    text-align: right;
+    font-style: italic;
+    font-size: 0.9em;
+    color: white;
+}
+
+#overlay {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -500;
+	transition-property: all;
+	transition-duration: 400ms;
+}
+#wrapper_comment {
+	position: fixed;
+	top: 180%;
+    width: 400px;
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    margin-bottom: -11%;
+	z-index: 1000;
+	transition: all 400ms;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgb(31, 31, 31);
+    box-shadow: 0px 0px 24px 25px rgba(0,0,0,0.5);
+    color: antiquewhite;
+    display: block;
+    overflow: auto;
+}
+.form_comment {
+    padding: 20px;
+    margin-bottom: 10px;
+    max-height: 100%;
+}
+.form_comment h5 {
+    font-size: 1.3rem;
+    line-height: 1.44444;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+    padding: 0 0 0 15px;
+    font-style: normal;
+    color: #dd0322;
+    border-left: 3px solid #5a5a5a;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: all 400ms;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.form_comment input {
+    height: 30px;
+    outline: none;
+}
+.form_comment textarea {
+    width: 100%;
+    min-height: 200px;
+    resize: vertical;
+}
+.form_comment input, .form_comment textarea {
+    background-color: rgb(15, 0, 0);
+    border: 1px solid #6b0010;
+    border-radius: 7px;
+    transition: all 400ms;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #acacac;
+    outline: none;
+    box-shadow: none;
+}
+.form_comment input:hover, .form_comment textarea:hover {
+    border-color: #dd0322;
+}
+.form_comment input:focus, .form_comment textarea:focus {
+    border-color: #dd0322;
+}
+.form_comment input::placeholder, .form_comment textarea::placeholder {
+    color: #dd0322;
+    font-size: 15px;
+}
+.form_comment input[type='submit'] {
+    cursor: pointer;
+    float: right;
+    width: 120px;
+    color: #dd0322;
+}
+
+/* !!! LOADER !!! */
+@keyframes lds-dual-ring {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes lds-dual-ring {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.lds-css {
+    width: -moz-fit-content;
+    width: fit-content;
+    width: -webkit-fit-content;
+    margin: auto;
+    height: -moz-fit-content;
+    height: fit-content;
+    height: -webkit-fit-content;
+}
+
+.lds-dual-ring {
+    position: relative;
+}
+
+.lds-dual-ring div {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 8px solid #000;
+    border-color: #ff0000 transparent #ff0000 transparent;
+    -webkit-animation: lds-dual-ring 1s linear infinite;
+    animation: lds-dual-ring 1s linear infinite;
+}
+
+.lds-dual-ring {
+    width: -moz-fit-content;
+    width: fit-content;
+    width: -webkit-fit-content;
+    margin: auto;
+    height: -moz-fit-content;
+    height: fit-content;
+    height: -webkit-fit-content;
+    -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+    transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+}
+
+.ajax_status, .ajax_status_form {
+    display: none;
+    width: -moz-fit-content;
+    width: fit-content;
+    width: -webkit-fit-content;
+    margin: auto;
+}

@@ -1,0 +1,276 @@
+.img_banner
+{
+    width: 100%;
+    margin-top: 30px;
+    z-index: 0;
+    box-shadow: 13px 13px 15px 1px rgba(0,0,0,0.75);
+    border-radius: 5px;
+}
+.img_banner_mobile {
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    z-index: 0;
+    box-shadow: 13px 13px 15px 1px rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+    display: none;
+}
+#article
+{
+    background-color: rgba(43, 43, 43, 0.8);
+    width: 100%;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 1.15em;
+    color: whitesmoke;
+    border-radius: 5px;
+    box-shadow: 13px 13px 15px 1px rgba(0,0,0,0.75);
+}
+.title_article
+{
+    height: 70px;
+    border-bottom: 1px solid #dd0322;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2.3em;
+    color: #dd0322;
+    font-weight: 800;
+    text-align: left;
+    line-height: 70px;
+    padding-left: 30px;
+}
+#text_welcome_article
+{
+    padding-left: 30px;
+    padding-right: 50px;
+}
+#text_welcome_article a, #text_welcome_article span 
+{
+    color: red;
+    cursor: pointer;
+}
+#text_welcome_article a:hover, #text_welcome_article span:hover  
+{
+    text-decoration: underline;
+}
+.title_note_welcome_article
+{
+    font-size: 1.375rem;
+    line-height: 1.27273;
+    font-weight: 700;
+    color: #dd0322;
+    border-left: 3px solid #5a5a5a;
+    width: 100%;
+    font-family: "Open Sans", sans-serif;
+    margin-left: 30px;
+    padding-left: 15px;
+}
+.note_welcome_article
+{
+    margin-left: 30px;
+    margin-right: 50px;
+    padding-bottom: 30px;
+}
+#display_news {
+    padding-bottom: 50px;
+}
+.news_el {
+    width: 80%;
+    margin-left: 7%;
+    background-color: rgb(34, 34, 34);
+    border-radius: 10px;
+    display: block;
+    height: 150px;
+    box-shadow: 13px 13px 15px 1px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+    transition: all 400ms;
+    padding: 5px;
+    padding-right: 25px;
+    margin-bottom: 30px;
+}
+.news_el:hover {
+    background-color: rgb(47,47,47);
+}
+.news_icon {
+    font-size: 110px;
+    float: left;
+    color: #5a5a5a;
+    transition: all 400ms;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+.news_title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #dd0322;
+    border-left: 3px solid #5a5a5a;
+    width: 100%;
+    font-family: "Open Sans",
+    sans-serif;
+    margin-left: 40px;
+    padding-left: 15px;
+    transition: all 400ms;
+    margin-top: 50px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.news_meta {
+    font-style: italic;
+    text-align: right;
+    margin-top: -20px;
+}
+#display_partners 
+{
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#display_partners a 
+{
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: 13px 13px 15px 1px rgba(0,0,0,0.75);
+}
+#display_partners a img 
+{
+	max-width: 100%;
+	height: auto;
+	transition: all 400ms;
+}
+
+/* !!!! NOTIF !!!!*/
+#overlay {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -500;
+	transition-property: all;
+	transition-duration: 400ms;
+}
+#ask_notif {
+    position: fixed;
+	top: 100%;
+    height: auto;
+    margin: auto;
+    min-width: 600px;
+    max-width: 100%;
+	z-index: 1000;
+	transition: all 400ms;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	background-color: rgb(126, 0, 0);
+    box-shadow: 0px 0px 24px 25px rgba(0,0,0,0.5), inset 0px 0px 15px 5px rgba(0,0,0,0.5);
+    color: rgb(175, 175, 175);
+    display: block;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.title_notif {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: #999999;
+	font-weight: 400;
+	text-align: left;
+    padding-left: 30px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+.title_notif i {
+    cursor: pointer;
+	width: auto;
+    font-size: 35px !important;
+    transition: all 300ms;
+    color: red;
+}
+.title_notif i:hover {
+    color: black;
+}
+#cred_modal {
+    position: fixed;
+	top: 150%;
+	max-width: 300px;
+    height: auto;
+    margin: auto;
+	z-index: 1000;
+	transition: all 400ms;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgb(47,47,47);
+    box-shadow: 0px 0px 24px 25px rgba(0,0,0,0.5);
+    color: antiquewhite;
+    display: block;
+    border-radius: 7px;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#cred_modal p {
+    width: 250px;
+    text-align: left;
+}
+.notif_form input, #unsub_modal input {
+    margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: rgb(67, 67, 104);
+	border-width: 2px, 2px, 2px, 2px;
+	border-color: #dd0322;
+	border-style: solid;
+	height: 35px;
+	transition-property: all;
+    transition-duration: 150ms;
+    min-width: 250px;
+	max-width: 500px;
+    border-radius: 5px;
+}
+.notif_form input:hover, #unsub_modal input:hover {
+    border-color: #ff0026;
+}
+.notif_form input[type="submit"], #unsub_modal input[type="button"] {
+    cursor: pointer;
+}
+input::placeholder {
+    color: rgb(175, 175, 175);
+}
+input {
+    color: azure;
+}
+#unsub_modal {
+    position: fixed;
+	top: 150%;
+	max-width: 300px;
+    height: auto;
+    margin: auto;
+	z-index: 1000;
+	transition: all 400ms;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgb(47,47,47);
+    box-shadow: 0px 0px 24px 25px rgba(0,0,0,0.5);
+    color: antiquewhite;
+    display: block;
+    border-radius: 7px;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: left;
+}
+@media only screen and (max-width: 800px) {
+    .img_banner {
+        display: none;
+    }
+    .img_banner_mobile {
+        display: block;
+    }
+}
