@@ -1,0 +1,25 @@
+body, #forms {
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto;
+}
+td, th {
+    border: 1px solid black;
+}
+table {
+    border-collapse: collapse;
+    background-color: grey;
+}
+.edit, .data, .edit_input, .edit_text, .wrapper_editor {
+    display: none;
+}
+#mceu_38, #mceu_39 {
+    display: none !important;
+}
+.edit_text {
+    width: 1000px;
+    height: 400px;
+}
+.table_text {
+    background-color: rgb(57, 57, 57);
+}
