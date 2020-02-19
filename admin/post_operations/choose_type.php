@@ -75,7 +75,6 @@
                 <option value="chroniques">chroniques</option>
                 <option value="interviews">interviews</option>
                 <option value="concerts">concerts</option>
-                <option value="live_programme">Programme Radio</option>
                 <option value="notifications">Personnes notifiées</option>
                 <option value="playlists">playlists</option>
                 <option value="sponsorts">sponsors</option>
