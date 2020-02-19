@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>Button - css image</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+<!-- Wimpy Button Styles -->
+<style type="text/css">
+
+.small_button {
+	display : inline-block;
+	vertical-align : text-bottom;
+	background-image: url(play_small.png);
+	background-repeat: no-repeat;
+	height: 19px;
+	width: 21px;
+}
+.small_button.pause {
+	background-image: url(pause_small.png);
+}
+
+.big_button {
+	display : inline-block;
+	vertical-align : text-bottom;
+	background-image: url(play.png);
+	height: 37px;
+	width: 37px;
+}
+.big_button.pause {
+	background-image: url(pause.png);
+}
+
+</style>
+
+
+
+<!-- Small Butons -->
+<div class="small_button" data-wimpybutton="../song1.mp3"></div> Song 1 
+<div class="small_button" data-wimpybutton="../song2.mp3"></div> Song 2 
+<div class="small_button" data-wimpybutton="../song3.mp3"></div> Song 3 
+
+<p>&nbsp;</p>
+
+<!-- Big Butons -->
+<div class="big_button" data-wimpybutton="../song1.mp3"></div> Song 4 
+<div class="big_button" data-wimpybutton="../song2.mp3"></div> Song 5 
+<div class="big_button" data-wimpybutton="../song3.mp3"></div> Song 6 
+<p>&nbsp;</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>Button - API - setSize</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+<!-- Wimpy Button Styles 
+NOTE: These <link> references should go into the <head>, 
+they are located here so they show up on the page.
+-->
+<link href="../wimpy.buttons/WimpyButton_7779840.css" rel="stylesheet" type="text/css">
+
+<!-- Wimpy Button Instance -->
+<p><span id="myButtonElementID" class="WimpyButton_7779840" data-wimpybutton="../song3.mp3"></span> <br />Song 6</p>
+
+
+<!-- Some buttons with javascript in the "conclick" to adjust the size -->
+<p>
+	<input type="button" onclick="wimpyButton.setSize('myButtonElementID', 25, 25)" value="Smaller Size" />
+</p>
+
+<p>
+	<input type="button" onclick="wimpyButton.setSize('myButtonElementID', 50, 50)" value="Medium Size" />
+</p>
+
+<p>
+	<input type="button" onclick="wimpyButton.setSize('myButtonElementID', 100, 100)" value="Bigger Size" />
+</p>
+
+<!-- Changing Icon Size -->
+<p>
+	<input type="button" onclick="wimpyButton.setSize('myButtonElementID', 36, 36, 12)" value="Small Icon" />
+</p>
+<p>
+	<input type="button" onclick="wimpyButton.setSize('myButtonElementID', 36, 36, 20)" value="Medium Icon" />
+</p>
+<p>
+	<input type="button" onclick="wimpyButton.setSize('myButtonElementID', 36, 36, 28)" value="Large Icon" />
+</p>
+
+
+<p>Set Size</p>
+
+
+
+
+
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

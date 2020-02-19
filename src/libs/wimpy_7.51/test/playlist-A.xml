@@ -1,0 +1,10 @@
+<playlist image="playlist-A.jpg">
+	<item>
+		<file>playlist-B.xml</file>
+		<image>NO PLAYLIST IMAGE HERE</image>
+	</item>
+	<item>
+		<file>playlist-C.xml</file>
+		<image>NO PLAYLIST IMAGE HERE</image>
+	</item>
+</playlist>

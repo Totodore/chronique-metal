@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>autoPlay</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+	<script>
+	var current = 1;
+	function changeSize(){
+		var player = wimpy.getPlayer("player");
+		if(current == 1){
+			player.setSize(600, 300);
+			current = 2;
+		} else {
+			player.setSize(300, 150);
+			current = 1;
+		}
+	}
+	</script>
+	
+	<div id="player" data-wimpyplayer data-width=150 data-height=75></div>
+
+	<p onclick="changeSize()">Click me to change size via class swap</p>
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

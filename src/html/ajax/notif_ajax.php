@@ -19,7 +19,7 @@
             'name' => $name
         ));
         setcookie("notif", "true", time() + (10 * 365 * 24 * 60 * 60), "/");
-        echo "Ton adresse mail a bien été enregistré ! Merci beaucoup de ton soutient ! Tu devrais être redirigé dans quelques secondes...";
+        echo "Ton adresse mail a bien été enregistré ! Merci beaucoup de ton soutien ! Tu devrais être redirigé dans quelques secondes...";
     }
     else if (isset($_GET['email'])) {   //Si c'est une desinscription
         $email = strip_tags($_GET['email']);

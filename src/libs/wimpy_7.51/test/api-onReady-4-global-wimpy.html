@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>API - onReady 3 args</title>
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+<div id="player1" data-wimpyplayer data-media="none"></div>
+<div id="player2" data-wimpyplayer data-media="none"></div>
+
+<script>
+
+// Put variables on the "widnow" scope so all functions have access to them.
+var p1;
+var p2;
+
+// Set up a function to "ping" once the player 
+// is set up and ready to be interacted with.
+function loadPlaylists(){
+	
+	// Set playlist on player 1
+	p1 = wimpy.getPlayer("player1");
+	p1.setPlaylist("../song1.mp3|../song2.mp3|../song3.mp3");
+	
+	// Set playlist on player 2
+	p2 = wimpy.getPlayer("player2");
+	p2.setPlaylist("../song3.mp3");
+	
+}
+
+// Send in our function to "ping" once wimpy is ready.
+wimpy.onReady(loadPlaylists);
+
+
+</script>
+
+
+<!-- Description -->
+<p>Loads a playlist using the "onReady" method and including additional arguments to return to our function.</p>
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+
+</html>

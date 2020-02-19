@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>Button - text via option</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+<!-- Stop and Pause -->
+<input onClick="wimpyButton.stop()" style="width:200px;height:40px;" type="button" value="STOP Wimpy Button" /> &nbsp; <input onClick="wimpyButton.pause()" style="width:200px;height:40px;" type="button" value="PAUSE Wimpy Button" />
+<p>&nbsp;</p>
+
+<h2> Click any of the standard HTML elements below</h2>
+
+<!-- DIV -->
+<div data-wimpyButton="../song1.mp3" style="background-color:#CCCCCC;">DIV play</div>
+<p>&nbsp;</p>
+
+
+<!-- P -->
+<p data-wimpyButton="../song2.mp3" style="background-color:#a4cbff;">P play</p>
+<p>&nbsp;</p>
+
+
+<!-- INPUT -->
+<input data-wimpyButton="../song3.mp3" type="button" value="INPUT play" />
+<p>&nbsp;</p>
+
+
+<!-- SPAN -->
+<span data-wimpyButton="../song1.mp3" style="background-color:#ff9fe5;">SPAN play</span>
+<p>&nbsp;</p>
+
+
+<!-- STRONG -->
+<p>The following is inline bold (strong) 
+<strong data-wimpyButton="../song2.mp3" style="background-color:#a4cbff;">STRONG play</strong>
+</p>
+<p>&nbsp;</p>
+
+
+<!-- IMAGE -->
+<img data-wimpyButton="../song3.mp3" src="play.png">
+<p>&nbsp;</p>
+
+
+<!-- LIST -->
+<select name="select1" size="3" id="select1">
+  <option data-wimpyButton="../song1.mp3" value="song 1">play song 7</option>
+  <option data-wimpyButton="../song2.mp3" value="song 2">play song 8</option>
+  <option data-wimpyButton="../song3.mp3" value="song 3">play song 9</option>
+</select>
+<p>&nbsp;</p>
+
+
+<!-- DROP-DOWN LIST -->
+<select name="select2" size="1" id="select2">
+  <option data-wimpyButton="../song1.mp3" value="song 1">play song 10</option>
+  <option data-wimpyButton="../song2.mp3" value="song 2">play song 11</option>
+  <option data-wimpyButton="../song3.mp3" value="song 3">play song 12</option>
+</select>
+<p>&nbsp;</p>
+
+
+
+<!-- Radio Buttons -->
+<p>
+  <input data-wimpyButton="../song1.mp3" type="radio" name="radioPlayer" id="radio1" value="song1" />play song 1
+  <input data-wimpyButton="../song2.mp3" type="radio" name="radioPlayer" id="radio2" value="song2" />play song 2
+  <input data-wimpyButton="../song3.mp3" type="radio" name="radioPlayer" id="radio3" value="song3" />play song 3
+</p>
+<p>&nbsp;</p>
+
+
+<!-- Checkboxes -->
+<p>
+<input data-wimpyButton="../song1.mp3" name="cb1" type="checkbox" id="cb1" value="song1" />
+play song 4 
+<input data-wimpyButton="../song2.mp3" name="cb2" type="checkbox" id="cb2" value="song2" />
+play song 5 
+<input data-wimpyButton="../song3.mp3" name="cb3" type="checkbox" id="cb3" value="song3" />
+play song 6
+</p>
+<p>&nbsp;</p>
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

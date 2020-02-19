@@ -3,7 +3,7 @@ $(function() {
         selector:'.text',
         plugins: "autoresize autolink autoresize image imagetools fullscreen textcolor colorpicker wordcount link lists code", //PLugins
         toolbar: "forecolor backcolor | link | bold italic underline | alignleft aligncenter alignright alignjustify | formatselect fontselect fontsizeselect | cut, copy, paste | bullist, numlist, | outdent, indent | image | fullscreen", //Ce qui est affiché dans la toolbar
-        content_css: "../../src/css/editor.css",
+        content_css: "https://chronique-metal.fr/src/css/editor.css",
         image_advtab: true, //On autorise les options avancées pour les images
         image_caption: true, //On autorise les legendes pour les images.
         images_upload_url: 'img_upload.php',
@@ -58,7 +58,7 @@ $(function() {
                     console.log('progress', evt.loaded/evt.total*100) 
                     $("progress").val(evt.loaded/evt.total*100);
                     if (evt.loaded/evt.total*100 == 100)
-                        $(".status").html("Decompresion des donnees...");
+                        $(".status").html("Décompresion des donnees...");
                 };
                 // return the customized object
                 xhr.onreadystatechange = function(event) {
@@ -68,7 +68,7 @@ $(function() {
                             $(".status").html(this.responseText);
                         } else {
                             console.log("Status de la réponse: %d (%s)", this.status, this.statusText);
-                            $(".status").html("Erreur lors de la requete au serveur : " + this.status + this,statusText);
+                            $(".status").html("Erreur lors de la requête au serveur : " + this.status + this,statusText);
                         }
                     }
                     $("progress").hide();

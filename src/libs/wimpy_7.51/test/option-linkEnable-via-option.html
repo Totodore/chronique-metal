@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>link enable - via playlist</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+
+
+
+
+<div data-wimpyPlayer data-width=600 data-height=250 data-linkEnable data-media='[ 
+	{
+		"file"	:	"../song1.mp3", 
+		"image"	:	"../song1.jpg", 
+		"title"	:	"My Song 1",
+		"link"	:	"http://www.gieson.com",
+		"linktip" : "Hello"
+	},
+
+	{
+		"file"	:	"../song2.mp3", 
+		"image"	:	"../song2.jpg", 
+		"title"	:	"My Song 2",
+		"link"	:	"http://www.drumbot.com",
+		"linktip" : "Click me to go to drumbot.com"
+	},
+	
+
+	{
+		"file"	:	"../song3.mp3", 
+		"image"	:	"../song3.jpg", 
+		"title"	:	"My Song 3 (no link in playlist)"
+	},
+
+	{
+		"file"	:	"../video1.mp4", 
+		"image"	:	"../video1.jpg", 
+		"title"	:	"My Video 1",
+		"link"	:	"http://www.dronefx.com",
+		"linktip" : "Visit Drone FX"
+	}
+]'></div>
+
+
+<!-- Description -->
+<p>Link Enable - via option</p>
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

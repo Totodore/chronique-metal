@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>Scroll Text</title>
+
+	<script src="_test-stuff.js"></script>
+
+	<!-- Wimpy Engine -->
+	<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+
+	<div data-wimpyplayer data-media='[
+	{
+		"file":"../song1.mp3",
+		"title":"this is along title used to show how the scrolling behaviour operates.", 
+		"artist":"small 1"
+	},
+	{
+		"file":"../song2.mp3",
+		"title":"Here we have a medium", 
+		"artist":"And this item is so close to the edges."},
+	{
+		"file":"../song3.mp3",
+		"title":"And he aea wea dsfa sdf sd", 
+		"artist":"a sd asd sda"}
+	]' data-skin="../wimpy.skins/Radbig.tsv"></div>
+
+
+
+<!-- Include this CSS in any one of your stylesheets. -->
+<style>
+
+@-webkit-keyframes key-wimpy-scroll-bounce {
+  0% 	{ text-indent: 0%; 	}
+  50% 	{ text-indent: -100%; 	}
+  100% 	{ text-indent: 0%; 	}
+}
+@keyframes key-wimpy-scroll-bounce {
+  0% 	{ text-indent: 0%; 	}
+  50% 	{ text-indent: -100%; 	}
+  100% 	{ text-indent: 0%; 	}
+}
+
+
+@-webkit-keyframes key-wimpy-scroll-to-left {
+  0% 	{ text-indent: 0%; 	}
+  92% 	{ text-indent: -100%; 	}
+  100% 	{ text-indent: 0%; 	}
+}
+
+
+@keyframes key-wimpy-scroll-to-left {
+  0% 	{ text-indent: 0%; 	}
+  92% 	{ text-indent: -100%; 	}
+  100% 	{ text-indent: 0%; 	}
+}
+
+@-webkit-keyframes key-wimpy-scroll-to-right {
+  0% 	{ text-indent: 0%; 	}
+  8% 	{ text-indent: -100%; 	}
+  100% 	{ text-indent: 0%; 	}
+}
+@keyframes key-wimpy-scroll-to-right {
+  0% 	{ text-indent: 0%; 	}
+  8% 	{ text-indent: -100%; 	}
+  100% 	{ text-indent: 0%; 	}
+}
+
+
+
+</style>
+<script>
+
+
+/*
+
+Used to provide a means for the text to scroll when it's outside 
+of the visible area. This funciton will initialize itself, 
+and is isolated so-as not to interfere with any of your other scripts.
+ */
+
+(function (){
+
+	// CONFIGURATION:
+
+	var playerID = "myPlayer";	// The id of the player DIV on the apge
+	var pixelsPerSecond = 5; 	// lower values = slower.
+	var easing = "linear"; 		// linear   ease-in-out
+	var scrollStyle = 'to-left'; // bounce to-left to-right
+
+
+	// Internal stuff
+	var player;
+	var scrollers = [];
+
+	function updateMarquee(){
+		for(var i=0; i<scrollers.length; i++){
+			var obj = scrollers[i];
+			var titleSize = obj.beeb.measureText();
+
+			var tosize = titleSize.w - obj.beeb.width;
+
+			var aniText;
+			if(tosize > 0){
+				var ms = (tosize / pixelsPerSecond) + 's';
+				aniText = 'key-wimpy-scroll-' + scrollStyle + ' ' + ms + ' ' + easing + ' infinite';
+				obj.wrap.style.width = tosize + 'px';
+			} else {
+				aniText = "none";
+			}
+
+			obj.span.style.animation = obj.span.style.webkitAnimation = aniText;
+		}
+	}
+
+	function makeScroller(obj){
+
+		if(obj){
+
+			// Used during development
+			//obj.setOverflow("visible"); // jbeeb builtin method.
+
+			// We'll create a shim to to lift the span into a 
+			// wrapper that we can resize, so the 100% width 
+			// resolves to the size of this wrapper and not 
+			// the wimpy control element. (We don't want to 
+			// change the size of the control element because 
+			// this would crop the text.
+			
+			var wrapper = document.createElement("div");
+			var s = wrapper.style;
+			s.position = 'absolute';
+			s.left = 0;
+			s.top = 0;
+			s.width = '30px';
+			s.height = '100%';
+
+			var elem = obj.element;
+			elem.appendChild(wrapper);
+
+			// Swap and replace
+			var span = elem.getElementsByTagName("span")[0];
+			span.style.position = 'absolute';
+			wrapper.appendChild(span);
+
+			//span.className = "wimpy-scroller";
+
+			scrollers.push({
+				beeb : obj, // wimpy was built on the jbeeb framework
+				span : span,
+				wrap : wrapper
+			});
+		}
+
+
+	}
+
+	wimpy.onReady(function() {
+
+		// Get a handle to the player
+		player = wimpy.getPlayer(playerID);
+		
+		if( ! player ){
+			player = wimpy.getPlayerList()[0];
+		}
+
+		// Get control from player
+		var title = player.getSkinElement("cmp_info_title");
+		var artist = player.getSkinElement("cmp_info_artist");
+		var album = player.getSkinElement("cmp_info_album");
+		
+		// Setup scrollers on each
+		makeScroller(title);
+		makeScroller(artist);
+		makeScroller(album);
+		
+		// Listen for changes
+		player.addListener("launch", updateMarquee);
+		player.addListener("done", updateMarquee);
+
+
+	});
+
+}());
+
+
+</script>
+
+
+
+	</div>
+	<!-- close pageWrapper -->
+</body>
+
+</html>

@@ -5,7 +5,7 @@
 <html>
     <head>
         <?php include '../../../src/html/system/init.html'; ?>
-        <title>Galeries - Chroniques Métal</title>
+        <title>Galeries - Chroniques Metal</title>
         <link type="text/css" rel="stylesheet" href="/src/css/photos.css" />
         <meta name="description" content="Retrouvez içi chaque album photos prises lors des différents concerts ou je me rends" />
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

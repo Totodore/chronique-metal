@@ -1,0 +1,99 @@
+.playerWrapper {
+	position : relative;
+	width : 300px;
+	margin : auto; /* center horizontially */
+}
+/* ============================
+   Playlist
+   ============================ */
+
+.playlistWrapper {
+	overflow-y : auto;
+	overflow-x : hidden;
+	position : relative;
+	font-family : Helvetica, Arial, sans-serif;
+	font-size : 14px;
+	line-height : 1.4em;
+	margin: auto; /* horzontal centering inside the "block" wrapper */
+	height : 200px;
+	width : 284px; /* account for scrollbar */
+}
+.playlist {
+	display : block;
+	position : relative;
+}
+/* First (and odd numbered) playlist item background color 
+.playlist > div:nth-child(2n + 1) {
+	background-color : #FFFFFF;
+}
+Second (and even numbered) playlist item background color 
+.playlist > div:nth-child(2n) {
+	background-color : #F9F9F9;
+}
+*/
+.playlistItem {
+	padding : 5px;
+	background-color : #F9F9F9;
+	border-top : 1px solid #CCC;
+	color : #777777;
+	text-align: left;
+	cursor : pointer;
+	-webkit-transition: all 0.3s ease;                  
+	    -moz-transition: all 0.3s ease;                 
+	    -o-transition: all 0.3s ease;   
+	    -ms-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	overflow : hidden;
+}
+.playlistItem.playing {
+	background-color : #333333;
+	color : #FFFFFF;
+}
+.playlistItem:hover.playing, .playlistItem:hover {
+	background-color : #FFC300;
+	color : #FFFFFF;
+}
+.playlistItemTitle, .playlistItemArtist .playlistItemAlbum, .playlistItemImage {
+	font-weight : 100;
+	display : block;
+	position : relative;
+	white-space : nowrap;
+}
+.playlistItemArtist .playlistItemAlbum {
+	color : #777777;
+}
+.playlistItemTitle {
+	font-weight : bold;
+	color : #000000;
+}
+.playlistItemTitle:before, .playlistItemArtist:before, .playlistItemAlbum:before {
+	color : #AAAAAA;
+	font-size : 12px;
+}
+.playlistItemTitle:before {
+	content: "title : ";
+}
+.playlistItemArtist:before {
+	content: "artist : ";
+}
+.playlistItemAlbum:before {
+	content: "album : ";
+}
+.playlistItemImage {
+	width : 60px;
+	height : 60px;
+	background-color : #555555;
+	background-size : contain; /* 100% 100%   contain    cover */
+	background-repeat : no-repeat;
+	background-position : center center;
+	float : left;
+	margin-right : 10px;
+}
+
+.noSelect {
+	/* Prevent text from being selected */
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}

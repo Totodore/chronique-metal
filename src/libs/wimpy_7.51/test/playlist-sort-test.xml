@@ -1,0 +1,27 @@
+<playlist>
+	<item>
+		<date>100</date>
+		<file>song1.mp3</file>
+		<title>X song - date - 100</title>
+	</item>
+	<item>
+		<date>60</date>
+		<file>song2.mp3</file>
+		<title>A song - date - 60</title>
+	</item>
+	<item>
+		<date>200</date>
+		<file>song3.mp3</file>
+		<title>Z song - date - 200</title>
+	</item>
+	<item>
+		<date>1000</date>
+		<file>song1.mp3</file>
+		<title>B song - date - 1000</title>
+	</item>
+	<item>
+		<date>34</date>
+		<file>song2.mp3</file>
+		<title>M song - date - 34</title>
+	</item>
+</playlist>

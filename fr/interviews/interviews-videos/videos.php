@@ -5,7 +5,7 @@
 <html>
     <head>
         <?php include '../../../src/html/system/init.html'; ?>
-        <title>Interviews - Chroniques Métal</title>
+        <title>Interviews - Chroniques Metal</title>
         <meta name="description" content="Retrouvez içi toutes mes vidéos d'interviews" />
         <link rel="stylesheet" type="text/css" media="screen" href="/src/css/videos.css" />
         <script type="text/javascript" src="/src/js/videos.js"></script>

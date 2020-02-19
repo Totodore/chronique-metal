@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>inchworm</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+<div data-wimpyplayer data-skin="../wimpy.skins/all.tsv" data-media="../song1.mp3"></div>
+<div data-wimpyplayer data-skin="../wimpy.skins/all.tsv" data-media="../song2.mp3"></div>
+<div data-wimpyplayer data-skin="../wimpy.skins/all.tsv" data-media="../song3.mp3"></div>
+
+<script>
+function stopAllPlayers(){
+	var list = wimpy.getPlayerList();
+	for(var i=0; i<list; i++){
+		list[i].pause();
+	}
+}
+</script>
+
+<button onclick="stopAllPlayers()">Stop all players</button>
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

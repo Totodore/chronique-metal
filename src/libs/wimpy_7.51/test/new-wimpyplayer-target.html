@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>centering</title>
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+	
+
+<script>
+
+var myplayer = new wimpyPlayer({
+                   target: "MyTarget",           
+                   media: "../song1.mp3",
+                   skin: "../wimpy.skins/038.tsv" 
+                 });
+
+</script>
+
+<h1>Player Below</p>
+<div id="MyTarget">In Here: </div>
+	
+	
+	<!-- Description -->
+	<p>Render to body</p>
+	
+	
+</div>
+<!-- close pageWrapper -->
+</body>
+</html>

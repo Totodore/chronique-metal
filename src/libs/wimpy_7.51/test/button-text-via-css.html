@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>Button - text via css</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+<!-- A simple button style -->
+<style type="text/css">
+
+.MyButtonStyle {
+
+	background-color: #C6C6C6;
+	width: 200px;
+	height: 60px;
+
+	/* Vertical align text using line-height = regular height */
+	line-height : 60px; 
+	text-align: center;
+	font-size: 18px;
+	border: 1px solid #000;
+
+	/* Center button on page using auto margin-left/right */
+	margin-left: auto; 
+	margin-right: auto;
+
+}
+
+/* Secret sauce -- use CSS to set the text on the button */
+.MyButtonStyle.play:after {
+	content:"Play (text via css)";
+}
+.MyButtonStyle.pause:after {
+	content:"Pause (text via css)";
+ }
+.MyButtonStyle.loading:after {
+	content:"Loading (text via css)";
+}
+</style>
+
+<!-- Wimpy Button Instance -->
+<div class="MyButtonStyle" data-wimpyButton="../song3.mp3"></div>
+
+<p>&nbsp;</p>
+
+
+
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

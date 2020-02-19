@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>sort - playlister</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+
+
+<!-- title -->
+<div data-wimpyPlayer data-sort="title"></div>
+<p>Sort on title</p>
+<p>&nbsp;</p>
+
+
+<!-- title, reverse -->
+<div data-wimpyPlayer data-sort="title" data-sortReverse data-media='playlist-sort-test.xml'></div>
+<p>Sort on title - reverse</p>
+<p>&nbsp;</p>
+
+
+<!-- date -->
+<div data-wimpyPlayer data-sort="date"></div>
+<p>Sort on date</p>
+<p>&nbsp;</p>
+
+
+<!-- shuffle -->
+<div data-wimpyPlayer data-sort="shuffle"></div>
+<p>Shuffle - order will change each time player/page loads</p>
+<p>&nbsp;</p>
+
+
+<!-- none -->
+<div data-wimpyPlayer data-sort="none"></div>
+<p>Sort - none - manually setting the player to "don't sort"</p>
+<p>&nbsp;</p>
+
+
+<!-- nothing set -->
+<div data-wimpyPlayer></div>
+<p>Sort - nothing set (displays in the same order as the <a href="playlist-sort-test.xml" target="_blank">source playlist</a>)</p>
+
+
+
+<!-- Description -->
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

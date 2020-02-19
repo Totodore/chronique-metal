@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>API - quick reference</title>
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapperNoCode" class="pageWrapper">
+
+
+
+
+<!-- Wimpy Player Target DIV -->
+<div id="myPlayerTarget" style="background-color:#CCCCCC;position:relative;margin:20px;width:500px;height:300px;"></div>
+
+
+<!-- Main Menu -->
+<div id="api" style="position:relative;margin:20px;width:300px;height:600px;overflow:auto;float:left;">
+	<a href="javascript:myPlayer.hide();">hide</a><br />
+	<a href="javascript:myPlayer.show();">show</a><br />
+	<a href="javascript:myPlayer.reset(resetParams1);">reset 1 (new skin)</a><br />
+	<a href="javascript:myPlayer.reset(resetParams2);">reset 2 (default skin)</a><br />
+	<a href="javascript:myPlayer.play();">play</a><br />
+	<a href="javascript:myPlayer.play('../song1.mp3');">play and load url</a><br />
+	<a href="javascript:myPlayer.play({file:'../song2.mp3', title:'my Song 1', cover:'../song1.jpg'});">play and load OBJECT</a><br />
+	<a href="javascript:myPlayer.pause();">pause</a><br />
+	<a href="javascript:myPlayer.gotoTrack(3);">goto track 3</a><br />
+	<a href="javascript:myPlayer.next();">next</a><br />
+	<a href="javascript:myPlayer.prev();">prev</a><br />
+	<a href="javascript:myPlayer.rewind();">rewind</a><br />
+	<a href="javascript:alert(myPlayer.getPosition());">getPosition</a><br />
+	<a href="javascript:myPlayer.setPosition(0.5);">setPosition</a><br />
+	<a href="javascript:showObject(myPlayer.getTrackDataset());">getTrackData</a><br />
+	<a href="javascript:showObject(myPlayer.getTrackDataset(2));">getTrackData for playlist item 2</a><br />
+	<a href="javascript:myPlayer.setInfo({title:'Yo Yo yo'});">setInfo</a><br />
+	<a href="javascript:alert(myPlayer.getVolume());">getVolume</a><br />
+	<a href="javascript:myPlayer.setVolume(0.4);">setVolume to 0.4</a><br />
+	<a href="javascript:myPlayer.setVolume(1);">setVolume to 1</a><br />
+	<a href="javascript:alert(myPlayer.getMute());">getMute</a><br />
+	<a href="javascript:myPlayer.setMute(0);">setMute 0</a><br />
+	<a href="javascript:myPlayer.setMute(1);">setMute 1</a><br />
+	<a href="javascript:alert(myPlayer.getLoop());">getLoop</a><br />
+	<a href="javascript:myPlayer.setLoop(0);">setLoop 0</a><br />
+	<a href="javascript:myPlayer.setLoop(1);">setLoop 1</a><br />
+	<a href="javascript:myPlayer.setLoop(2);">setLoop 2</a><br />
+	<a href="javascript:alert(myPlayer.getRandom());">getRandom</a><br />
+	<a href="javascript:myPlayer.setRandom(0);">setRandom 0</a><br />
+	<a href="javascript:myPlayer.setRandom(1);">setRandom 1</a><br />
+	<a href="javascript:myPlayer.setCoverArt('coverart-test-setCoverart.jpg');">setCoverArt</a><br />
+	<a href="javascript:showObject(myPlayer.getPlaylist());">getPlaylist</a><br />
+	<a href="javascript:myPlayer.setPlaylist(playlist_1);">setPlaylist</a><br />
+	<a href="javascript:myPlayer.sort('none');myPlayer.appendPlaylist('../video1.mp4', 2, true);">appendPlaylist</a><br />
+	<a href="javascript:showObject(myPlayer.getSkinElement('cmp_play'));">getSkinElement</a><br />
+	<a href="javascript:alert(myPlayer.getLoading());">getLoading</a><br />
+	
+</div>
+
+
+<script type="text/javascript">
+
+
+// ---------------------
+// Used for: reset
+// ---------------------
+var playlist_1 = ['../song1.mp3', '../song2.mp3', '../song3.mp3', '../video1.mp4'];
+
+
+// ---------------------
+// Create Player
+// ---------------------
+var myPlayer = new wimpyPlayer({
+									target		: "myPlayerTarget"
+									, media		: playlist_1
+									, startUpText	: "Click to Play"
+									, coverArt	: "coverart-test-1.jpg"
+								});
+
+
+// ---------------------
+// Used for: reset 1
+// ---------------------
+var resetParams1 = {
+	target			: null
+	, name			: null
+	, skin			: "../wimpy.skins/Vlad.tsv"
+	, media			: playlist_1
+	, startUpText	: "Reset Start Up Text"
+	, coverArt		: "coverart-test-2.jpg"
+	, coverArtFit	: 1
+	, width			: null
+	, height		: null
+	, autoPlay		: 0		// 0: off, 1: on (NOTE: Some devices don't allow autoPlay)
+	, random		: 0		// 0: off, 1: on
+	, sort			: null 	// "shuffle" or Any Media Item Object field as string
+	, sortReverse	: 0 	// Reverse the sorting order Z-A
+	, loop			: 0 	// 0: off, 1: loop track, 2: loop playlist
+	, volume		: 1 	// Percent (0.0 to 1.0) 
+	, infoSpeed		: 10 	// Pixels per second
+	, infoScroll	: 2		// 0: off, 1: on
+	, limitPlayTime : null	// Seconds
+	, startOnTrack	: null	// Track number (e.g. 3 = 3rd track down)
+	, autoAdvance	: 1		// 0: off, 1: on
+	, downloadEnable: 0		// 0: off, 1: on
+	, downloadWindow: null	// String (e.g. "_blank");
+	, linkEnable	: 0		// 0: off, 1: on
+	, linkWindow	: null	// String (e.g. "_blank");
+	, inline		: 0
+	, timeFormat	: "1 / 3"
+	, infoFormat	: "1 - 2 - 3"
+	, getid3		: 0
+	, getid3image	: 0
+	, plugPlaylist	: null
+	, plugEvery		: 5
+	, plugFirst		: 0
+	, plugDisables	: 0
+	, disableControls: null
+	, numberTracks	: 0
+	, glyphFile		: "A"
+	, glyphList		: "g"
+	, glyphDownload	: "s"
+	, glyphLink		: ">"
+	, disableFlash	: 1
+	, responsive	: 0
+	, fit			: 0
+};
+
+var resetParams2 = {
+	target			: null
+	, name			: null
+	, skin			: null
+	, media			: "playlist-example2.xml"
+	, startUpText	: "Reset Start Up Text"
+	, coverArt		: "coverart-test-2.jpg"
+	, coverArtFit	: 1
+	, width			: null
+	, height		: null
+	, autoPlay		: 0		// 0: off, 1: on (NOTE: Some devices don't allow autoPlay)
+	, random		: 0		// 0: off, 1: on
+	, sort			: null 	// "shuffle" or Any Media Item Object field as string
+	, sortReverse	: 0 	// Reverse the sorting order Z-A
+	, loop			: 0 	// 0: off, 1: loop track, 2: loop playlist
+	, volume		: 1 	// Percent (0.0 to 1.0) 
+	, infoSpeed		: 10 	// Pixels per second
+	, infoScroll	: 2		// 0: off, 1: on
+	, limitPlayTime : null	// Seconds
+	, startOnTrack	: null	// Track number (e.g. 3 = 3rd track down)
+	, autoAdvance	: 1		// 0: off, 1: on
+	, downloadEnable: 0		// 0: off, 1: on
+	, downloadWindow: null	// String (e.g. "_blank");
+	, linkEnable	: 0		// 0: off, 1: on
+	, linkWindow	: null	// String (e.g. "_blank");
+	, inline		: 0
+	, timeFormat	: "1 / 3"
+	, infoFormat	: "1 - 2 - 3"
+	, getid3		: 0
+	, getid3image	: 0
+	, plugPlaylist	: null
+	, plugEvery		: 5
+	, plugFirst		: 0
+	, plugDisables	: 0
+	, disableControls: null
+	, numberTracks	: 0
+	, glyphFile		: "A"
+	, glyphList		: "g"
+	, glyphDownload	: "s"
+	, glyphLink		: ">"
+	, disableFlash	: 1
+	, responsive	: 0
+	, fit			: 0
+};
+
+</script>
+
+<div id="output">output</div>
+
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

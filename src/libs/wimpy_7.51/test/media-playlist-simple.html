@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>media - playlist simple</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+
+
+
+
+
+<!-- NOTE: We've put spaces around the "pipe" character. Wimpy will automatically trim the spaces off, and it might be a little easier to read?-->
+
+<div data-wimpyPlayer data-media="../song1.mp3 | ../song2.mp3 | ../video1.mp4"></div>
+<p>Pipe Delimited</p>
+
+<!-- NOTE: NOTE: putting newlines into an HTML attribute's "value" may not be something that all browsers honor...  and may break the browser's ability to read the overall <DIV>? Generally not such a good idea, but if it works, hey, what the heck -->
+<div data-wimpyPlayer data-media="../song1.mp3
+../song2.mp3
+../video1.mp4"></div>
+<p>Newline Delimited
+<br>A bit of a hack. See source code for details.</p>
+
+<!-- Just checking Wimpy logic to handle both pipe and newline at the same time. -->
+<div data-wimpyPlayer data-media="../song1.mp3 |
+../song2.mp3 |
+../video1.mp4"></div>
+<p>Checking Wimpy logic to handle both pipe and newline at the same time.</p>
+
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

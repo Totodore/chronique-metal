@@ -120,5 +120,20 @@
     -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
     transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
 }
+@media only screen and (max-width: 800px) {
+    .title_article {
+        font-size: 6.5vw;
+    }
+    .title_text {
+        font-size: 5vw;
+    }
+    #disp_texts {
+        flex-direction: column;
+    }
+    #text {
+        max-width: 80%;
+    }
+    
+}
 
 

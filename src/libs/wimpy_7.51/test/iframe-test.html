@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>iframe test</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+<iframe sandbox="allow-same-origin allow-scripts" 	
+		width=260 
+		height=60
+		frameborder=0
+		scrolling="no"
+		src="../wimpy.iframe.html?skin=wimpy.skins/sixteen.tsv&media=song1.mp3|song2.mp3|song3.mp3"
+></iframe>
+
+<iframe sandbox="allow-same-origin allow-scripts" 	
+		width=260 
+		height=60
+		frameborder=0
+		scrolling="no"
+		src="../wimpy.iframe.html?skin=wimpy.skins/301.tsv&media=song1.mp3|song2.mp3|song3.mp3"
+></iframe>
+
+<!-- IMPORTANT: URLs within any of the data-* options MUST be relative to the wimpy installation folder -->
+
+<!-- Description -->
+<p><strong>IMPORTANT:</strong> URLs within any of the data-foo=&quot;file.foo&quot; MUST be relative to the wimpy installation folder (WIF) <br />
+	because the &quot;wimpy.iframe.html&quot; file resides within the WIF, and the &quot;wimpy.iframe.html&quot; <br />
+	file is the actual page that is loading into our iframe.</p>
+	<p>&nbsp;</p>
+	<p> It&apos;s a little confiusing, just pretend for a second that you&apos;re  <br />
+	located within the wimpy folder while entering the URLs.</p>
+
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

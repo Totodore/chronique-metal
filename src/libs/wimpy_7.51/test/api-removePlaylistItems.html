@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>API - setSkin 2</title>
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+
+
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+
+<script>
+
+
+var simpleList = "../song1.mp3|../song2.mp3|../song3.mp3"
+
+var myplayer = new wimpyPlayer({
+                   target: "MyTarget",           
+                   media: simpleList,
+				   autoPlay : 1,
+				  startOnTrack : 3
+                 });
+
+function restorePlaylist(){
+	myplayer.setPlaylist(simpleList);
+}
+
+function showPlaylist(){
+	showObject(myplayer.getPlaylist(), "output");
+}
+
+function doit1(){
+	// "i" is a special reference to the internal array index.
+	// The "i" field is automatically added to each playlist item by wimpy.
+	// Indices are zero-based (e.g. the first item is 0, the second 1)
+	myplayer.removePlaylistItems("i", 1);
+}
+
+function doit2(){
+	myplayer.removePlaylistItems("file", ["../song1.mp3", "../song2.mp3"]);
+	
+}
+
+function doit3(){
+	myplayer.removePlaylistItems("i", [0,2]);
+}
+
+function whatAmIPlaying() {
+	var info = myplayer.getTrackDataset();
+	var index = info["i"];
+	var file = info["file"];
+	var title = info["title"];
+	
+	var output = "array index: " + index + " (Which is track number: " + (index+1) + " in the wimpy playlist)";
+	output += "\n\nfile: " + file;
+	output += "\n\ntitle: " + title;
+	output += "\n\ngetStopped: " + myplayer.getStopped();
+	alert(output);
+}
+
+
+</script>
+
+<!-- Player gets rendered here-->
+<div id="MyTarget"></div>
+
+<p>&nbsp;</p>
+<p>
+	<input type="button" onclick="restorePlaylist()" value="Restore Playlist" />
+	<input type="button" onclick="showPlaylist()" value="ShowPlaylist" />
+</p>
+<p><input type="button" onclick="doit1()" value="Remove the second item (zero-based indices!)" /></p>
+<p><input type="button" onclick="doit2()" value="Remove items by file URL" /></p>
+<p><input type="button" onclick="doit3()" value="Remove first and last" /></p>
+<p><input type="button" onclick="whatAmIPlaying()" value="whatAmIPlaying" /></p>
+
+
+<pre id="output">Output will appear here after link is clicked</pre>
+
+
+<!-- Create a player instance and set the "id" to 
+"myPlayerAsDiv" so we can reference it in our javascript -->
+<div id="myPlayerAsDiv" data-wimpyplayer data-media="song1.mp3|song2.mp3|song3.mp3"></div>
+
+<p> A one-liner </p>
+<p><input type="button" onclick='javascript:wimpy.getPlayer("myPlayerAsDiv").removePlaylistItems("i", 1)' value="Remove The second Item (which is indice 1 of a zero-based array)" /></p>
+
+<p>&nbsp;</p>
+<!-- Description -->
+
+
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

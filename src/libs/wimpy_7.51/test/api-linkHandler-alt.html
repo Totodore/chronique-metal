@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>API - linkHandler</title>
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+<div id="myPlayerID" data-wimpyplayer data-linkEnable></div>
+
+
+<script>
+
+// Set up a function to "ping" when the link icon is clicked in the playlist.
+function myLinkHandler(itemData){
+	
+	var see = "";
+	// Set the playlist
+	for(var prop in itemData){
+		see += prop + " : " + itemData[prop] + "<br>";
+	}
+	
+	var outputObj = document.getElementById("output");
+	outputObj.innerHTML = see;
+	
+}
+
+wimpy.onReady((function (){
+wimpy.getPlayer("myPlayerID").setLinkHandler(myLinkHandler);
+}));
+
+</script>
+
+
+<pre id="output">Output will appear here after link is clicked</pre>
+
+<!-- Description -->
+<p>Establishing player via HTML, and applying the handler using wimpy.onready</p> 
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+
+</html>

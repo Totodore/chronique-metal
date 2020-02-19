@@ -5,7 +5,7 @@
 <html>
     <head>
         <?php include '../../src/html/system/init.html'; ?>
-        <title>Chroniques écrites - Chronique Métal</title>
+        <title>Chroniques écrites - Chronique Metal</title>
         <meta name="description" content="Retrouvez içi toutes mes chroniques écrites sur les derniers albums de métal" />
 		<link rel="stylesheet" type="text/css" media="screen" href="/src/css/texts.css" />
         <script type="text/javascript" src="/src/js/texts.js"></script>

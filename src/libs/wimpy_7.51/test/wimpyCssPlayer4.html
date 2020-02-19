@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>Wimpy CSS player with external playlist</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+<!-- The styles for wimpyCssPlayer -->
+<link href="wimpyCssPlayer4.css" rel="stylesheet" type="text/css">
+ 
+</head>
+<body>
+
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+	<!-- BEGIN Example -->
+	<div class="playerWrapper">
+		<div id="mywp" data-wimpyplayer data-random data-loop="2" data-skin="wimpyCssPlayer4.tsv" data-media="wimpyCssPlayer.xml" ></div>
+
+		<div class="playlistWrapper" data-wimpyCssPlayer data-for="mywp">
+
+			<div data-playlist class="playlist">
+				<!-- 
+				Define one playlist item for wimpyCss to use as a template 
+				for rendering playlist items.
+
+				You may wish to add additional items during development 
+				(while you design your CSS), but be aware that wimpyCssPlayer 
+				will blast away everything you put in here and replace it with 
+				the actual playlist items that are prepared from the main player's
+				playlist that you define for data-media.
+
+				Again, just one data-playlist-item is required, which acts as a template
+				for wimpyCssPlayer to render a playlist.
+
+				 -->
+				<div data-playlist-item class="playlistItem">
+					<div data-item-image class="playlistItemImage noSelect"><img src="http://placehold.it/60x60" /></div>
+					<!-- NOTE: We're using CSS to insert "title: artist: and album: " before the text from the playlist -->
+					<div data-item-title class="playlistItemTitle noSelect">Example Title</div>
+					<div data-item-artist class="playlistItemArtist noSelect">Example Artist</div>
+					<div data-item-album class="playlistItemAlbum noSelect">Example Album</div>
+				</div>
+				<div data-playlist-item class="playlistItem">
+					<div data-item-image class="playlistItemImage noSelect"><img src="http://placehold.it/60x60" /></div>
+					<div data-item-title class="playlistItemTitle noSelect">Example Title</div>
+					<div data-item-artist class="playlistItemArtist noSelect">Example Artist</div>
+					<div data-item-album class="playlistItemAlbum noSelect">Example Album</div>
+				</div>
+				<div data-playlist-item class="playlistItem">
+					<div data-item-image class="playlistItemImage noSelect"><img src="http://placehold.it/60x60" /></div>
+					<div data-item-title class="playlistItemTitle noSelect">Example Title</div>
+					<div data-item-artist class="playlistItemArtist noSelect">Example Artist</div>
+					<div data-item-album class="playlistItemAlbum noSelect">Example Album</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	<!-- END Example -->
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

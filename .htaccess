@@ -1,0 +1,5 @@
+DirectoryIndex redirect.php
+ErrorDocument 404 /lost.php
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>

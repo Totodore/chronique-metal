@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>inchworm</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+<!-- Using JSON to inform wimpy that you're connecting to s3 -->
+<div data-wimpyplayer data-media='{"file":"https://wimpyplayer.s3.amazonaws.com", "kind":"s3"}'></div>
+
+<p>&nbsp;</p>
+<!-- Tricking wimpy by setting a pseudo extension of "s3" at the end of the URL to your bucket. 
+<div data-wimpyplayer data-media="http://wimpyplayer.s3.amazonaws.com/media/?foo.s3"></div>
+-->
+<p>&nbsp;</p>
+<!-- Description -->
+<p> See the following page for more info:<br/ >
+<a href="http://www.wimpyplayer.com/docs/amazon-s3.html" targe="_blank">http://www.wimpyplayer.com/docs/amazon-s3.html</a></p>	
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

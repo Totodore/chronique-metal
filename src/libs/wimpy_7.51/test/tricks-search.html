@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>DEV simple</title>
+
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body style="background-color:#efefef">
+
+<!-- Wimpy Player DIV -->
+<div id="myPlayer" data-wimpyPlayer data-media="../wimpy.php"></div>
+
+
+<input id="searchTextBox" type="text" />
+<input id="searchButton" type="button" value="Search"/>
+<input id="restoreButton" type="button" value="Restore Playlist"/>
+
+
+<script>
+
+var player;
+var playlist;
+var searchTextBoxElement;
+var searchButtonElement;
+var restoreButtonElement;
+
+function setupSearch(e) {
+	
+	searchTextBoxElement = document.getElementById("searchTextBox");
+	searchTextBoxElement.addEventListener("keypress", wimpySearchEnterCheck);
+	
+	searchButtonElement = document.getElementById("searchButton");
+	searchButtonElement.addEventListener("click", wimpySearch);
+
+	restoreButtonElement = document.getElementById("restoreButton");
+	restoreButtonElement.addEventListener("click", restorePlaylist);
+	
+}
+
+function restorePlaylist(){
+
+	if( ! player ){
+		player = wimpy.getPlayer("myPlayer");
+	}
+	if(originalPlaylist){
+		player.setPlaylist(originalPlaylist);
+	} else {
+		player.setPlaylist("../wimpy.php");
+	}
+}
+
+function wimpySearchEnterCheck(e){
+	// Look to see if the "enter" key is hit.
+	if(e.keyCode == 13){
+		wimpySearch();
+	}
+}
+
+var firstRun = false;
+var originalPlaylist = null;
+
+function wimpySearch(){
+	
+	// Get the value of the entered text
+	var cleanText = searchTextBoxElement.value;
+
+	if(cleanText.length){
+		// Only need to do this one time. It wouldn't hurt to do every time.
+		if( ! player ){
+			player = wimpy.getPlayer("myPlayer");
+			playlist = player.getPlaylist();
+		}
+
+		if(firstRun){
+			originalPlaylist = playlist.slice();
+		}
+
+		if(cleanText){
+			
+			cleanText = cleanText.toLowerCase();
+
+			var searchResults = [];
+
+			var gotoIndex = -1;
+			for(var i=0; i<playlist.length; i++){
+				item = playlist[i];
+
+				// Since we're just looking for text that matches we can jam all the 
+				// text for the fields we want to search against into one long string
+				// then just look for a match on the long string as opposed to searching
+				// each individual field one-at-a-time.
+				var gang = (item.title + item.artist + item.album + item.file).toLowerCase();
+
+				if( gang.indexOf(cleanText) > -1 ){
+					searchResults.push(item);
+				}
+				
+			}
+
+			if(searchResults.length){
+				player.setPlaylist(searchResults);
+			}
+
+		}
+	}
+
+
+	
+}
+
+wimpy.onReady(setupSearch);
+
+</script>
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

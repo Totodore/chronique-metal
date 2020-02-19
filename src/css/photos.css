@@ -43,6 +43,10 @@
 	text-align: left;
 	line-height: 70px;
 	padding-left: 30px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	justify-content: space-between;
 }
 #wrapper_photos
 {
@@ -137,10 +141,10 @@
 	transition-duration: 400ms;
 }
 #viewer {
-	display: block;
+	display: none;
 	position: fixed;
 	top: 50%;
-	width: 60%;
+	width: 70%;
 	height: auto;
 	margin: auto;
 	z-index: -1000;
@@ -149,6 +153,8 @@
 	transform: translate(-50%, -50%);
 	background-color: rgb(15, 0, 0);
 	box-shadow: 0px 0px 24px 25px rgba(0,0,0,0.5);
+	max-height: 95%;
+	overflow: scroll;
 }
  /* !!! LOADER !!! */
 	@keyframes lds-dual-ring {
@@ -203,5 +209,17 @@
 		-webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
 		transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
 	}
-  
-
+@media only screen and (max-width: 800px) {
+	.title_article {
+		font-size: 6.5vw;
+	}
+	.title_photos {
+		font-size: 5vw;
+	}
+	.disp_photos {
+		width: 90%;
+	}
+	#viewer {
+		width: 95%;
+	}
+}

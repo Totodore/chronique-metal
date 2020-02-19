@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>API - setSkin 1</title>
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+
+
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+
+
+<!-- Set up a player with the ID attribute set to "myPlayer" -->
+<div id="myPlayer" data-wimpyPlayer
+></div>
+
+<!-- A little handler function (so our HTML isn't impossible to read). -->
+<script>
+function changeSkin(theSkinURL){
+	// Get a handle to the player from the core "wimpy" class,
+	// by requesting a player via the "getPlayer" method,
+	// and setting the argument to the same thing as what
+	// we used as the ID when settign up the player.
+	var plr = wimpy.getPlayer("myPlayer");
+	
+	// Now that we have a handle to the player object
+	// we can use the javascript API method "setSkin"
+	// to change the skin.
+	plr.setSkin(theSkinURL);
+	
+}
+</script>
+
+<p>&nbsp;</p>
+<p><input type="button" onclick="changeSkin('../wimpy.skins/301.tsv')" value="Change Skin" /></p>
+<p>&nbsp;</p>
+
+<!-- Description -->
+<pre>Change skin
+See the source code for clarity</pre>
+
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

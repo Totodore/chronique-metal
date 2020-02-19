@@ -1,22 +1,13 @@
 <?php 
-    function str_process($str) {
+    function str_process($str, $size) {
         $str = stripslashes($str);  //On supprimes les backslashes de protection
-        $str = explode(" ", $str, 50);  //on separe la str en array
-        $str = array_slice($str, 0, 48);    //On prend les 48 premiers mots
-        $str = implode(" ", $str); //On reconvertit en str
         $str = strip_tags($str); //On vire tous les tags html
+        $str = explode(" ", $str, $size);  //on separe la str en array
+        $str = array_slice($str, 0, $size-2);    //On prend les 48 premiers mots
+        $str = implode(" ", $str); //On reconvertit en str
         return $str;
     }
     include '../system/init.php';
-    $currentPage = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-
-    if ($_SERVER['REQUEST_METHOD'] == "GET" && strcmp(basename($currentPage), basename(__FILE__)) == 0)
-    {
-        http_response_code(404);
-        header("Location: /");
-        die(); /* remove this if you want to execute the rest of
-                the code inside the file before redirecting. */
-    }
 
     $from = $_GET["from"];  //on recup la position actuelles des photos
     $type = $_GET["type"];
@@ -33,8 +24,9 @@
 ?>
 <?php foreach($tbl_chroniques as $key => $chronique) { ?>
     <div id="text">
-        <a href="/fr/read/?id=<?php echo $chronique['ID']; ?>&type=chroniques">
-            <h4 class="title_text"><?php echo $chronique['titre']; ?></h4>
+        <a href="/fr/read/?id=<?php echo $chronique['ID']; ?>&type=<?php echo $chronique['type']?>">
+            <h4 class="title_text"><?php echo str_process($chronique['titre'], 9);
+            if (str_word_count($chronique['titre']) > 9 ) echo " ..."; ?></h4>
             <span class="date_text">
                 <?php 
                     $year = substr($chronique['date'], 0, 4);
@@ -44,7 +36,7 @@
                 ?>
             </span>
             <span class="author_text"> par <?php echo $chronique['auteur']; ?></span>
-            <p class="content_text"><?php echo str_process($chronique['text']) ?> ...</p>
+            <p class="content_text"><?php echo str_process($chronique['text'], 50) ?> ...</p>
         </a>
     </div>
 <?php } ?>

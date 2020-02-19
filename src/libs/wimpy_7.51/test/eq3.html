@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>Graphic EQ</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+<!-- Wimpy Graphic EQ -->
+<script src="../wimpy.eq/wimpy.eq.js"></script>
+<!-- Wimpy Graphic EQ Renderer -->
+<script src="../wimpy.eq/renderers/Spectrograph.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+<div style="background-color:#000000" data-wimpyplayer data-media="../song1.mp3" data-skin="../wimpy.skins/realeq1.tsv" data-eq="Spectrograph"></div>
+
+
+<!-- Description -->
+Be sure to add the &gt; script &lt; tag into the HEAD for the renderer you wish to use!
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Wimpy Player</title>
+
+<!-- Wimpy Engine -->
+<script src="/wimpy/wimpy.js"></script>
+
+<!-- Radionomy Info Parser for Wimpy-->
+<script src="StreamInfoRadionomy.js"></script>
+
+<script>
+
+// See StreamInfoRadionomy.js for more information on each parameter.
+StreamInfoRadionomy({
+	player 		: "myPlayer", // The ID for the player DIV on your page.
+	listenURL 	: "http://listen.radionomy.com/wimpy", // try https or http?
+	guid 		: "8f255562-3f11-406b-8d98-f98cb23c84ec",
+	apikey 		: "4842dc4c-d6e0-4ab3-986b-412fd7d6aeab", 
+	startOnLoad : true,
+	listenTitle : "Wimpy Radio", // Used in the playlist, if the player skin has a playlist
+	adTitle		: "Advertisement" // Displayed in conjunction with listenTitle when an advertisement is playing. (listenTitle is used for the "artist" slot in the player)
+});
+
+</script>
+
+</head>
+<body>
+
+
+<!-- Wimpy Player -->
+<div id="myPlayer" data-wimpyplayer data-media="none"></div>
+
+
+</body>
+</html>
+ 
+ 
+ 

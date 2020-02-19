@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>DEV simple</title>
+
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body>
+
+	<div id="MY_PLAYER" data-wimpyplayer data-media="none" data-skin="/wimpy/wimpy.skins/SKIN_NAME.tsv"></div>
+
+
+	<img src="../images/playd.jpg" border="0px" width="22" height="22" onClick='wimpy.getPlayer("MY_PLAYER").play("../song1.mp3")' />
+	<img src="../images/playd.jpg" border="0px" width="22" height="22" onClick='wimpy.getPlayer("MY_PLAYER").play("../song2.mp3")' />
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

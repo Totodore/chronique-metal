@@ -1,0 +1,293 @@
+@font-face {
+    font-family: latin_modern;
+    src: url(/src/fonts/Latin_modern/lmmono10-regular.otf);
+}
+#article
+{
+    background-color: rgba(43, 43, 43, 0.8);
+    width: 100%;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.15em;
+    color: whitesmoke;
+    border-radius: 5px;
+    box-shadow: 13px 13px 15px 1px rgba(0,0,0,0.75);
+    padding-bottom: 35px;
+}
+.title_article
+{
+    height: 70px;
+    border-bottom: 1px solid #dd0322;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2.3em;
+    color: #dd0322;
+    font-weight: 800;
+    text-align: left;
+    line-height: 70px;
+    padding-left: 30px;
+}
+.title_radio {
+    font-size: 1.4rem;
+    line-height: 1.44444;
+    font-weight: 700;
+    margin: 15px 0 15px 0;
+    padding: 0 0 0 15px;
+    font-style: normal;
+    color: #dd0322;
+    border-left: 3px solid #5a5a5a;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: 6px 5px 4px rgba(0, 0, 0, 1);
+}
+#overlay {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -500;
+	transition-property: all;
+	transition-duration: 400ms;
+}
+#modal_discord {
+    position: fixed;
+	top: 150%;
+	width: 80%;
+    height: 80%;
+    margin: auto;
+    margin-bottom: -11%;
+	z-index: -1000;
+	transition: all 400ms;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgb(15, 0, 0);
+    box-shadow: 0px 0px 24px 25px rgba(0,0,0,0.5);
+    color: antiquewhite;
+    display: block;
+}
+.discord_embed {
+    width: 100%;
+    height: 100%;
+}
+.open_discord {
+    width: fit-content;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+	margin: auto;
+	display: block;
+	color: #dd0022;
+	font-size: 0.8em;
+	font-family: font_metal;
+	cursor: pointer;
+	border: 2px solid;
+	padding: 5px;
+	border-radius: 7px;
+	margin-top: 7px;
+	margin-bottom: 10px;
+    transition: all 400ms;
+    text-align: center;
+}
+.open_discord:hover {
+    border-color: rgb(38, 38, 38);
+	background-color: #dd0021a9;
+	color: rgb(38, 38, 38);
+}
+.open_discord p {
+    width: 100%;
+    height: 100%;
+}
+#wrapper_articles, #wrapper_video {
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 50px;
+    opacity: 1;
+}
+#disp_articles {
+    margin-top: 30px;
+    height: auto;
+    border-top: 2px solid #dd0322;
+    border-left: 2px solid #dd0322;
+    border-right: 2px solid #dd0322;
+    border-radius: 3px;
+    box-shadow: 0px 0px 45px 15px rgba(0, 0, 0, 1);
+}
+.article {
+    border-bottom: 2px solid #dd0322;
+    height: auto;
+    display: flex;
+    height: 70px;
+    background-color: #590000;
+    box-shadow: inset 0px 0px 41px 30px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+    position: relative;
+    transition: all 300ms;
+}
+.article:hover {
+    filter: brightness(200%);
+}
+.article a {
+    margin: none;
+    width: 100%;
+    font-family: latin_modern, sans-serif;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    color: #d2d2d2;
+    overflow: hidden;
+    white-space: nowrap;
+    justify-content: space-between;
+    font-size: 1.2em;
+}
+
+
+
+/* !!! LOADER !!! */
+@keyframes lds-dual-ring {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes lds-dual-ring {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+.lds-css {
+    width: -moz-fit-content;
+    width: fit-content;
+    width: -webkit-fit-content;
+    margin: auto;
+    height: -moz-fit-content;
+    height: fit-content;
+    height: -webkit-fit-content;
+}
+.lds-dual-ring {
+    position: relative;
+}
+.lds-dual-ring div {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 8px solid #000;
+    border-color: #ff0000 transparent #ff0000 transparent;
+    -webkit-animation: lds-dual-ring 1s linear infinite;
+    animation: lds-dual-ring 1s linear infinite;
+}
+.lds-dual-ring {
+    width: -moz-fit-content;
+    width: fit-content;
+    width: -webkit-fit-content;
+    margin: auto;
+    height: -moz-fit-content;
+    height: fit-content;
+    height: -webkit-fit-content;
+    -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+    transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+}
+.ajax_status {
+    /* display: none; */
+    display: block;
+    width: -moz-fit-content;
+    width: fit-content;
+    width: -webkit-fit-content;
+    margin: auto;
+    margin-top: 50px;
+}
+#error_radio {
+    width: -moz-fit-content;
+    width: fit-content;
+    width: -webkit-fit-content;
+    margin: auto;
+    display: block;
+    margin-top: 45px;
+}
+.error_title {
+	font-family: font_metal;
+    color: #dd0322;
+    word-wrap: break-word;
+}
+
+.disp_video
+{
+	margin: auto;
+	width: 100%;
+	box-shadow: 13px 13px 15px 1px rgba(0,0,0,0.75);
+	border-radius: 5px;
+    background-color: rgba(43, 43, 43, 1);
+    height: 575px;
+}
+.title_video
+{
+	height: 70px;
+	border-bottom: 1px solid #dd0322;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: #dd0322;
+	font-weight: 800;
+	text-align: left;
+	line-height: 70px;
+    padding-left: 30px;
+    font-size: 115%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    justify-content: space-between;
+    margin-bottom: 0px;
+}
+.video_frame 
+{
+    width: 100%;
+    height: 77%;
+}
+
+@media only screen and (max-width: 800px) {
+    .title_article {
+        font-size: 6.5vw;
+    }
+    .title_radio {
+        font-size: 5vw;
+        margin-left: 5vw;
+    }
+    #disp_articles {
+        font-size: 0.9em;
+        width: 95%;
+        margin-left: 2.5vw;
+    }
+    .article {
+        height: 2.7em;
+        overflow: hidden;
+    }
+    .open_discord {
+        margin-left: 2.5vw;
+        margin-right: 2.5vw;
+        width: auto;
+    }
+    .open_discord p {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .disp_video {
+        margin-left: 10%;
+        margin-right: 10%;
+        height: 525px;
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .disp_video {
+        height: 400px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .disp_video {
+        height: 300px;
+    }
+}

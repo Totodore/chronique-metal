@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlist>
+	<item>
+		<file>nothing.mp3</file>
+		<title>To enable FLAC</title>
+		<link>http://www.wimpyplayer.com/docs/common/file_formats_FLAC.html</link>
+		<linktip>Click me for more info</linktip>
+	</item>
+	<item>
+		<file>nothing.mp3</file>
+		<title>you must include</title>
+		<link>http://www.wimpyplayer.com/docs/common/file_formats_FLAC.html</link>
+		<linktip>Click me for more info</linktip>
+	</item>
+	<item>
+		<file>nothing.mp3</file>
+		<title>the wimpy.flac.js file</title>
+		<link>http://www.wimpyplayer.com/docs/common/file_formats_FLAC.html</link>
+		<linktip>Click me for more info</linktip>
+	</item>
+	<item>
+		<file>nothing.mp3</file>
+		<title>in your page.</title>
+		<link>http://www.wimpyplayer.com/docs/common/file_formats_FLAC.html</link>
+		<linktip>Click me for more info</linktip>
+	</item>
+	<item>
+		<file>nothing.mp3</file>
+		<title>CLICK (i) --&gt;</title>
+		<link>http://www.wimpyplayer.com/docs/common/file_formats_FLAC.html</link>
+		<linktip>Click me for more info</linktip>
+	</item>
+	<item>
+		<file>nothing.mp3</file>
+		<title>for more info.</title>
+		<link>http://www.wimpyplayer.com/docs/common/file_formats_FLAC.html</link>
+		<linktip>Click me for more info</linktip>
+	</item>
+</playlist>

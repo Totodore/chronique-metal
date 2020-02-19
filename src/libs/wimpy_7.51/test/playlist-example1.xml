@@ -1,0 +1,54 @@
+<playlist image="coverart-test-1.jpg">
+	<item>
+		<date>1400054347</date>
+		<file>http://www.wimpyplayer.com/media/audio/song1.mp3</file>
+		<kind>mp3</kind>
+		<index>01</index>
+		<album>Miserable Songs</album>
+		<year>2010</year>
+		<artist>Michael Gieson</artist>
+		<title>Blue</title>
+		<genre>Folk</genre>
+		<link>http://www.gieson.com/music</link>
+		<image>http://www.wimpyplayer.com/media/audio/song1.jpg</image>
+	</item>
+	<item>
+		<date>1400054757</date>
+		<file>http://www.wimpyplayer.com/media/audio/song2.mp3</file>
+		<kind>mp3</kind>
+		<album>Raise The Dead</album>
+		<index>01</index>
+		<year>2013</year>
+		<artist>Plain Verses Cult</artist>
+		<title>Brown Eyed Girl</title>
+		<genre>Folk</genre>
+		<link>http://www.reverbnation.com/plainversuscult</link>
+		<image>http://www.wimpyplayer.com/media/audio/song2.jpg</image>
+	</item>
+	<item>
+		<date>1400054758</date>
+		<file>http://www.wimpyplayer.com/media/audio/song2.mp3</file>
+		<kind>mp3</kind>
+		<album>Raise The Dead</album>
+		<index>04</index>
+		<year>2013</year>
+		<artist>Plain Verses Cult</artist>
+		<title>Medicine Man</title>
+		<genre>Folk</genre>
+		<link>http://www.reverbnation.com/plainversuscult</link>
+		<image>http://www.wimpyplayer.com/media/audio/song2.jpg</image>
+	</item>
+	<item>
+		<date>1400054347</date>
+		<file>http://www.wimpyplayer.com/media/audio/song3.mp3</file>
+		<kind>mp3</kind>
+		<index>05</index>
+		<album>Raise The Dead</album>
+		<year>2013</year>
+		<artist>Plain Verses Cult</artist>
+		<title>Jimbo</title>
+		<genre>Folk</genre>
+		<link>http://www.gieson.com/music</link>
+		<image>http://www.wimpyplayer.com/media/audio/song3.jpg</image>
+	</item>
+</playlist>

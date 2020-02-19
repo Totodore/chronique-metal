@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>option responsive size 2</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+
+
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+
+
+<style type="text/css" media="screen">
+	html, body {
+		width : 100%;
+		height : 100%;
+		margin:0;
+		padding:0;
+		overflow:hidden;
+		background-color:#484848;
+	}
+	.full {
+		left:0px;
+		top:0px;
+		width : 100%;
+		height : 100%;
+	}
+</style>
+
+
+<!-- NOTE: Wimpy will only active "responsive" mode when the DIV has either a 
+class or a style attribute definition. In addition, the data-responsive flag needs to be set manually. -->
+<div class="full" data-wimpyPlayer data-responsive data-skin="../wimpy.skins/video_player_1.tsv"></div>
+
+
+
+<!-- Description -->
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

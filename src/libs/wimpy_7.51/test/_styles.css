@@ -1,0 +1,163 @@
+html, body {
+	background-color:#D4D4D4;
+
+	line-height: 14px;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	/*
+		margin: 0;
+		padding: 0;
+	*/
+	margin: 0px;
+	padding: 0;
+}
+
+p, h1, h2, h3 {
+	text-align:center;
+}
+
+div.alignLeft p {
+	text-align:left;
+}
+
+a {
+	color: #4b4b4b;
+	text-decoration: none;
+}
+a:hover {
+	color: #4b4b4b;
+	text-decoration: none;
+}
+a:visited {
+	color: #4b4b4b;
+	text-decoration: none;
+}
+a:active {
+	color: #4b4b4b;
+	text-decoration: none;
+}
+
+pre {
+	color: #666666;
+	background-color:#EFEFEF;
+	padding: 6px;
+}
+
+
+.notActive {
+	background-color:none;
+	color:#4b4b4b;
+}
+
+.amActive, .amActive a:hover, .amActive a:active, .amActive a:visited, .amActive a:hover {
+	background-color:#539cd9;
+	color:#FFFFFF;
+}
+
+.list {
+	line-height: 14px;
+	font-size: 14px;
+	padding: 3px;
+	margin: -0px;
+	text-align:left;
+}
+
+#mainMenu {
+	background-color:#d5dbe3;
+	position:fixed;
+	left:0px;
+	top:0px;
+	bottom:0px;
+	width:300px;
+	overflow:auto;
+	padding:10px;
+}
+
+#mainMenu p {
+	line-height:20px;
+}
+
+.pageWrapper {
+	position:absolute;
+	left:300px;
+	top:0px;
+	right:0px;
+	bottom:0px;
+	height:100%;
+	margin: 40px;
+}
+
+.fooButton {
+	background-color:#FF0000;
+}
+
+.color-red {
+	color : #c30b15;
+}
+
+/* ------------------------------------------------------ */
+/* prettify */
+
+
+pre {
+	        tab-size : 2;
+	     -o-tab-size : 2;
+	    -ms-tab-size : 2;
+	   -moz-tab-size : 2;
+	-webkit-tab-size : 2;
+}
+
+pre.highlight {
+	background-color: "#FF0000"; 
+}
+
+/* Coda scheme ported from TextMate to google prettify */
+pre.prettyprint {
+	width : auto;
+	margin : 0;
+	padding : 0;
+	overflow : auto;
+	white-space : pre-wrap;
+	
+}
+pre .nocode { 
+	background-color: none; 
+	color: #000 
+}
+
+pre .str { color: #060;} 	/* string */
+pre .kwd { color: #03F;} 	/* keyword */
+pre .com { color: #999;} 	/* comment */
+pre .typ { color: #000;} 	/* type */
+pre .lit { color: #000;} 	/* literal */
+pre .pun { color: #000;}    /* punctuation */
+pre .pln { color: #000;}    /* plaintext */
+pre .tag { color: #861681;} /* html/xml tag */
+pre .atn { color: #C5680C;} /* attribute name */
+pre .atv { color: #221AA6;} /* attribute value */
+pre .dec { color: #1F00FF;} /* decimal */
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+	margin : 0;
+	padding: 0 0 0 3em;
+	background: #e8e8e8;
+}
+.lineNumbers {
+	background-color: "#FF0000"; 
+}
+
+ol.linenums > :first-child { 
+	padding-top: 4px !important;
+}
+ol.linenums > :last-child {
+	padding-bottom: 10px !important;
+}
+
+/* IE indents via margin-left */
+li.L0,li.L1,li.L2,li.L3,li.L4,li.L5,li.L6,li.L7,li.L8,li.L9 {
+	background: #FFFFFF;
+	position : relative;
+	padding: 0 3em 0 8px;
+	margin : 0;
+}

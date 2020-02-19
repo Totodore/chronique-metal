@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>API - enableControls</title>
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+
+
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+
+
+<!-- Set up a player with the ID attribute set to "myPlayer" -->
+<div id="myPlayer" data-wimpyPlayer></div>
+
+
+<script>
+
+/*
+// Quick Reference:
+// enableControls();	// enables all "main play controls" as defined in wimpyConfigs.mainPlayControls.
+// enableControls(1);	// enables all "main play controls" as defined in wimpyConfigs.mainPlayControls.
+// enableControls(0);	// DISABLES all "main play controls" as defined in wimpyConfigs.mainPlayControls.
+// enableControls(1, "foo,bar"); // enables only the controls defined in list
+// enableControls(0, "foo,bar"); // disables only controls defined in list
+*/
+
+<!-- A little relay function (so our HTML isn't impossible to read). -->
+function disabler(param){
+	
+	// Get a handle to the player by requesting a player from wimpy 
+	// with the "getPlayer" method. We set the argument to the ID 
+	// we used when settign up the player in the DIV above.
+	var plr = wimpy.getPlayer("myPlayer");
+	
+	// Now send the arguments along to the "enableControls" method in our player.
+	plr.disableControls(param);
+	
+}
+
+// Same as above, but calling "diableControls" instead.
+function enabler(param){
+	var plr = wimpy.getPlayer("myPlayer");
+	plr.enableControls(param);
+}
+
+</script>
+
+<p>&nbsp;</p>
+<p><input type="button" onclick="disabler()" value="DISABLE All Play Controls" /></p>
+<p>&nbsp;</p>
+<p><input type="button" onclick="enabler()" value="Enable All Play Controls" /></p>
+<p>&nbsp;</p>
+<p><input type="button" onclick="disabler('play,next,scrubber')" value="DISABLE Play, Next, Scrubber (timeline)" /></p>
+<p>&nbsp;</p>
+<p><input type="button" onclick="enabler('play,next,scrubber')" value="Enable Play, Next, Scrubber (timeline)" /></p>
+
+<!-- Description -->
+<p>Enables and disables controls.</p>
+
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

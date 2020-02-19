@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>API - appendPlaylist 3</title>
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+<script>
+
+
+function doit3(){
+	
+	
+	// An array containing 2 Track Datasets
+	var list = [
+					{
+						file:"../song1.mp3",
+						title:"Mixer",
+						album:"Miserable Songs",
+						artist:"Michael Gieson"
+					},
+
+					{
+						file:"../song2.mp3",
+						title:"Sleeping",
+						album:"Miserable Songs",
+						artist:"Michael Gieson"
+					}
+				]
+	
+	// Grab a handle to our player object and append the list.
+	wimpy.getPlayer("myPlayer3").appendPlaylist(list);
+	
+	
+}
+</script>
+
+
+<div id="myPlayer3" data-wimpyPlayer
+ data-sort="none" data-media="../song3.mp3|../song1.mp3" data-skin="../wimpy.skins/301.tsv"></div>
+
+<p>&nbsp;<p>
+<p><input type="button" onclick="doit3();" value="Add 2 tracks" /></p>
+<p>&nbsp;<p>
+
+<!-- Description -->
+<p>API - appendPlaylist</p>
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

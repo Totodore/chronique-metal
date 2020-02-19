@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>id</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+
+<script>
+
+function getPlayerPlaylist(theID){
+	
+	// Get a handle to a player using the "id"
+	var player = wimpy.getPlayer(theID);
+	
+	// Retrieve the player's playlist
+	var playlist = player.getPlaylist();
+	
+	// Set up a string to return
+	var out = theID + " playlist:<br>";
+	
+	// Parse the javascript playlist. For each item 
+	// in the playlist, get the title and file
+	for(var i=0; i<playlist.length; i++){
+		
+		// Get the next item
+		var item = playlist[i];
+		
+		// Add text to the autput
+		out += "title: " + item.title + "   file : " + item.file + "<br>";
+	}
+	
+	// return the text
+	return out + "<p>&nbsp;</p>";
+}
+function doit(){
+
+	var out = document.getElementById("showOuptut");
+	out.innerHTML = getPlayerPlaylist("myPlayer1") + getPlayerPlaylist("myPlayer2");
+	
+}
+
+</script>
+
+
+
+
+<div id="myPlayer1" data-wimpyPlayer data-media="../song1.mp3"></div>
+<p>myPlayer1</p>
+
+
+<div id="myPlayer2" data-wimpyPlayer data-media="../song2.mp3"></div>
+<p>myPlayer2</p>
+
+
+<!-- A simple button to ping the "doit" function. -->
+<p>&nbsp;</p><p><input type="button" onclick="doit()" value="Get Player Info" /></p><p>&nbsp;</p>
+
+
+<pre id="showOuptut">
+	Results will show up here.
+</pre>
+<!-- Description -->
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

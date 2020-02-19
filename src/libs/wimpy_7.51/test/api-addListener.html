@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>API - addListener</title>
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+
+
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+<!-- Set up a player instance DIV, defining the ID so we can target it. -->
+<div id="MyTarget"></div>
+
+<script>
+
+
+
+// Set up a function to handle the listener dispatch:
+function launchCallback(trackData, customArgument){
+	// This will render the returned data to the DIV below that has the ID of "output".
+	showObject(trackData, "output", true, "Lauch");
+	showObject(customArgument, "output", true, "Launch custom argument");
+}
+function playCallback(trackData, customArgument){
+	showObject(trackData, "output", true, "Play");
+	showObject(customArgument, "output", true, "Play custom argument");
+}
+function pauseCallback(trackData, customArgument){
+	showObject(trackData, "output", true, "Pause");
+	showObject(customArgument, "output", true, "Pause custom argument");
+}
+function doneCallback(trackData, customArgument){
+	showObject(trackData, "output", true, "Done");
+	showObject(customArgument, "output", true, "Done custom argument");
+}
+
+function playlistReadyCallback(trackData, customArgument){
+	showObject(trackData, "output", true, "Playlist Ready");
+	showObject(customArgument, "output", true, "Playlist Ready custom argument");
+}
+function playlistCompleteCallback(trackData, customArgument){
+	showObject(trackData, "output", true, "Playlist Complete");
+	showObject(customArgument, "output", true, "Playlist Complete custom argument");
+}
+function linkCallback(trackData, customArgument){
+	showObject(trackData, "output", true, "Link");
+	showObject(customArgument, "output", true, "Link custom argument");
+}
+function downloadCallback(trackData, customArgument){
+	showObject(trackData, "output", true, "Download");
+	showObject(customArgument, "output", true, "Download custom argument");
+}
+
+// No data is returned for these listeners.
+function readyCallback(customArgument){
+	showObject("No data is returned with this listener", "output", true, "Player Ready");
+	showObject(customArgument, "output", true, "Player Ready custom argument");
+}
+function skinReadyCallback(customArgument){
+	showObject("No data is returned with this listener", "output", true, "Skin Ready");
+	showObject(customArgument, "output", true, "Skin Ready custom argument");
+}
+function enabledCallback(customArgument){
+	showObject("No data is returned with this listener", "output", true, "Enabled");
+	showObject(customArgument, "output", true, "Enabled custom argument");
+}
+function disabledCallback(customArgument){
+	showObject("No data is returned with this listener", "output", true, "Disabled");
+	showObject(customArgument, "output", true, "Disabled custom argument");
+}
+function resizeCallback(customArgument){
+	showObject("No data is returned with this listener", "output", true, "Resize");
+	showObject(customArgument, "output", true, "Resize custom argument");
+}
+
+
+var myPlayer = new wimpyPlayer({
+                                    target: "MyTarget", 
+                                    media : "../song1.mp3|../song2.mp3|../song3.mp3"
+                                });
+
+// Add the "play" listener.
+myPlayer.addListener("ready", 		readyCallback, 	this, "my arg");
+myPlayer.addListener("launch", 		launchCallback, this, "my arg");
+myPlayer.addListener("play", 		playCallback, this, "my arg");
+myPlayer.addListener("pause", 		pauseCallback, this, "my arg");
+myPlayer.addListener("done", 		doneCallback, this, "my arg");
+myPlayer.addListener("skinReady", 	skinReadyCallback, this, "my arg");
+myPlayer.addListener("enabled", 	enabledCallback, this, "my arg");
+myPlayer.addListener("disabled", 	disabledCallback, this, "my arg");
+myPlayer.addListener("playlistReady", playlistReadyCallback, this, "my arg");
+myPlayer.addListener("playlistComplete", playlistCompleteCallback, this, "my arg");
+myPlayer.addListener("link", 		linkCallback, this, "my arg");
+myPlayer.addListener("download", 	downloadCallback, this, "my arg");
+myPlayer.addListener("resize", 		resizeCallback, this, "my arg");
+
+</script>
+
+<!-- This is used to print the output to the page -->
+<pre id="output">Listener return info will appear here.</pre>
+
+
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>player position fixed</title>
+<script src="_test-stuff.js"></script>
+
+
+<style>
+
+.playerWrapper {
+	display:table-cell;
+	position : fixed;
+	bottom : 0px;
+	width:100%;
+	height:35px; /* Adjust this to push up or down */
+	background-color:#c0e1ff; /* Delete this line. It exists just so you can see the container visually. */
+	vertical-align:middle;
+}
+
+
+</style>
+<!-- Wimpy Engine class="myPlayer" -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+</head>
+
+	<div class="playerWrapper">
+		<div data-wimpyPlayer data-skin="../wimpy.skins/audio_player_x.tsv"></div>
+	</div>
+	
+<!-- close pageWrapper -->
+</body>
+</html>

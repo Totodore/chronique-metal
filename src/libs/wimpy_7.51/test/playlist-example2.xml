@@ -1,0 +1,54 @@
+<playlist image="coverart-test-2.jpg">
+	<item>
+		<date>1400054348</date>
+		<file>http://www.wimpyplayer.com/media/audio/song3.mp3</file>
+		<kind>mp3</kind>
+		<album>Miserable Songs</album>
+		<index>06</index>
+		<year>2010</year>
+		<artist>Michael Gieson</artist>
+		<title>Templar</title>
+		<genre>Folk</genre>
+		<link>http://www.gieson.com/music</link>
+		<image>http://www.wimpyplayer.com/media/audio/song3.jpg</image>
+	</item>
+	<item>
+		<date>1400054758</date>
+		<file>http://www.wimpyplayer.com/media/audio/song3.mp3</file>
+		<kind>mp3</kind>
+		<album>Raise The Dead</album>
+		<index>02</index>
+		<year>2013</year>
+		<artist>Plain Verses Cult</artist>
+		<title>Jimbo</title>
+		<genre>Folk</genre>
+		<link>http://www.reverbnation.com/plainversuscult</link>
+		<image>http://www.wimpyplayer.com/media/audio/song3.jpg</image>
+	</item>
+	<item>
+		<date>1400054347</date>
+		<file>http://www.wimpyplayer.com/media/audio/song1.mp3</file>
+		<kind>mp3</kind>
+		<index>01</index>
+		<album>Miserable Songs</album>
+		<year>2010</year>
+		<artist>Michael Gieson</artist>
+		<title>Ding</title>
+		<genre>Folk</genre>
+		<link>http://www.gieson.com/music</link>
+		<image>http://www.wimpyplayer.com/media/audio/song1.jpg</image>
+	</item>
+	<item>
+		<date>1400054758</date>
+		<file>http://www.wimpyplayer.com/media/audio/song3.mp3</file>
+		<kind>mp3</kind>
+		<album>Raise The Dead</album>
+		<index>03</index>
+		<year>2013</year>
+		<artist>Plain Verses Cult</artist>
+		<title>Kaleidoscope</title>
+		<genre>Folk</genre>
+		<link>http://www.reverbnation.com/plainversuscult</link>
+		<image>http://www.wimpyplayer.com/media/audio/song3.jpg</image>
+	</item>
+</playlist>

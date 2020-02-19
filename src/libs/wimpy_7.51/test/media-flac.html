@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>media - flac web player</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+<script src="../wimpy.flac/wimpy.flac.js"></script>
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+<p>Player Example</p>
+<div id="flac1" data-wimpyPlayer data-media="../wimpy.flac/FLAC_example.flac"></div>
+
+
+<p>&nbsp;</p>
+<p>Button Example </p>
+<link href="../wimpy.buttons/WimpyButton_7779840.css" rel="stylesheet" type="text/css">
+
+<div style="display:block;margin:auto" class="WimpyButton_7779840" data-wimpybutton="../wimpy.flac/FLAC_example.flac"></div>
+
+
+<!-- Description -->
+
+<p>For more info: 
+<a href="http://www.wimpyplayer.com/docs/common/file_formats_FLAC.html">http://www.wimpyplayer.com/docs/common/file_formats_FLAC.html</a>
+</p>
+<p>&nbsp;</p>
+
+</div>
+</div> <!-- close pageWrapper -->
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>Tricks - Rating</title>
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+
+<script>
+
+// NOTE: These areguments are the stadard set returned when using addMEL
+// obj	- The button that was clicked
+// po	- An object containing x/y position information for mouse and object.
+// args - Any argument that was established when setting up the addMEL.
+function setRating (obj, pos, args){
+	
+	// Get the current track info
+	var trackData = player.getTrackDataset();
+	var file = trackData.file;
+	
+	// Set up a variable to display what happened.
+	var displayInfo;
+	
+	// If no file, then the user hasn't launch a track yet, so don't do rating.
+	if(file){
+	
+		// Loop through our "stars" array and turn items on or off 
+		// based on the index sent in via the "args" argument.
+		for(var i=0; i<5; i++){
+			var elem = stars[i];
+	
+			if(i <= args){
+				elem.setState(1);
+			} else {
+				elem.setState(0);
+			}
+	
+		}
+		
+		// Note: "args" is a zero-based reference, so:
+		// 0 = 1 star
+		// 1 = 2 stars
+		// 2 = 3 stars... etc.
+		displayInfo = "User rated " + file + " with " + (args+1) + " stars.";
+	
+	} else {
+		displayInfo = "No file has been played.";
+		alert("You must play a track before you can rate!");
+	}
+	
+	// This function is located in "_test_stuff.js" and prints stuff into page.
+	showObject(displayInfo, "output", true, "Star Clicked");
+	//alert(displayInfo);
+
+}
+
+function setRating2(id){
+	alert(id);
+}
+
+var stars = [];
+function getStars(){
+
+	for(var i=0; i<5; i++){
+		
+		// Get a handle to our star objects in the skin.
+		var elem = player.getSkinElement("rate" + i);
+		
+		// Put the element into an array.
+		stars.push(elem);
+		
+	
+		// Skin elements have a built-in "addMEL" function, 
+		// (MEL stands for "Mouse Event Listener").
+		//
+		// The addMEL is set up with 5 arguments:
+		//
+		// addMEL(evt, func, scope, bubbles, arg)
+		//
+		// "evt" 		The event name and can be any of the following:
+		// 		mouseDown
+		// 		mouseUp
+		// 		mouseClick
+		// 		mouseOver
+		// 		mouseMove	mouse hovering over with movement
+		// 		mouseDrag	click down and dragging 
+		// 		mouseOut
+		// "func" 		The function to call when triggered.
+		// "scope"		The scope that the "func" resides within.
+		// "bubbles" 	A boolean that indicates if the mouse click should "fall through" to elements underneath it.
+		// "arg" 		Available to incorporate custom data to include during an event trigger.
+		//
+		// Here we're setting up the MEL to ping the "setRating" function 
+		// we've defined above, and set the "arg" to the "i" index.
+		elem.addMEL(
+					"mouseDown", 	// The event to listen for.
+					this.setRating, // The function we want to ping
+					this, 			// the "setRating" is in the "window" scope, or "this" for short.
+					false, 			// Don't bubble (not that important)
+					i				// the index of the element in our "stars" array.
+					);
+		
+		// FYI:
+		// You can also use traditional methods to apply mouse events. 
+		// To do so, you'll need to target the "element" property of the skin object.
+		// However, it gets a little tricky doing it this way because you have to 
+		// store the "i" value somehow.
+		//
+		// Example:
+		// elem.element.onclick = function(arg) {
+		//    setRating();
+		// };
+	
+	}
+	
+}
+
+// Create a new player
+var player = new wimpyPlayer({
+		skin : "../wimpy.skins/045_ratings.tsv",
+		media : "../song1.mp3|../song2.mp3|../song3.mp3",
+		onReady : getStars
+	});
+
+
+
+
+
+</script>
+
+<p>&nbsp;</p>
+Click a star... but you'll first need to play a track! 
+<p>&nbsp;</p>
+
+<pre id="output">Output goes here</p>
+
+<p>&nbsp;</p>
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+
+</html>

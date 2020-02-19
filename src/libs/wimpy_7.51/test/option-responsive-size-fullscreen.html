@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>option responsive size fullscreen</title>
+
+<style type="text/css" media="screen">
+	html, body {
+		width : 100%;
+		height : 100%;
+		margin:0;
+		padding:0;
+		overflow:hidden;
+		background-color:#484848;
+	}
+	.full {
+		left:0px;
+		top:0px;
+		width : 100%;
+		height : 100%;
+	}
+</style>
+
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body>
+
+
+
+
+<!-- NOTE: See the source code above for how to set up the styles. 
+(We couldn't put them here because the styles affect the HTML and BODY elements -->
+
+<!-- NOTE: Wimpy will only active "responsive" mode when the DIV has either a 
+class or a style attribute definition. In addition, the data-responsive flag needs to be set manually. -->
+
+<div class="full" data-wimpyPlayer data-responsive data-skin="../wimpy.skins/104_c.tsv"></div>
+
+
+
+
+</body>
+</html>

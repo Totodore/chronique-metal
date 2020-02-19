@@ -26,6 +26,7 @@
     color: whitesmoke;
     border-radius: 5px;
     box-shadow: 13px 13px 15px 1px rgba(0,0,0,0.75);
+    text-align: left;
 }
 .title_article
 {
@@ -53,7 +54,7 @@
 {
     text-decoration: underline;
 }
-.title_note_welcome_article
+.title_note_welcome_article, #display_announce h5
 {
     font-size: 1.375rem;
     line-height: 1.27273;
@@ -65,7 +66,7 @@
     margin-left: 30px;
     padding-left: 15px;
 }
-.note_welcome_article
+.note_welcome_article, #display_announce p
 {
     margin-left: 30px;
     margin-right: 50px;
@@ -130,13 +131,14 @@
 {
     cursor: pointer;
     margin: 10px;
-    box-shadow: 13px 13px 15px 1px rgba(0,0,0,0.75);
 }
 #display_partners a img 
 {
 	max-width: 100%;
 	height: auto;
-	transition: all 400ms;
+    transition: all 400ms;
+    box-shadow: 13px 13px 15px 1px rgba(0,0,0,0.75);    
+    filter: none;
 }
 
 /* !!!! NOTIF !!!!*/
@@ -153,7 +155,7 @@
 }
 #ask_notif {
     position: fixed;
-	top: 100%;
+	top: 150%;
     height: auto;
     margin: auto;
     min-width: 600px;
@@ -195,7 +197,7 @@
 }
 #cred_modal {
     position: fixed;
-	top: 150%;
+	top: 250%;
 	max-width: 300px;
     height: auto;
     margin: auto;
@@ -246,7 +248,7 @@ input {
 }
 #unsub_modal {
     position: fixed;
-	top: 150%;
+	top: 250%;
 	max-width: 300px;
     height: auto;
     margin: auto;
@@ -272,5 +274,57 @@ input {
     }
     .img_banner_mobile {
         display: block;
+    }
+    .title_article {
+        font-size: 6.5vw;
+    }
+    .title_note_welcome_article {
+        font-size: 1.3em;
+    }
+    #article {
+        font-size: 0.9em;
+    }
+    .news_icon {
+        display: none;
+    }
+    .news_title {
+        font-size: 1.2em;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        margin-left: 20px;
+        text-align: left;
+        line-height: 1.5em;
+        max-height: 4.5em;
+        word-wrap: break-word;
+        overflow: hidden;
+        text-overflow: initial;
+        white-space: initial;
+        position: relative;
+    }
+    .news_title::before { /* pseudo element pour les ... à la fin*/
+        content: '...';
+        width: -moz-fit-content;
+        width: fit-content;
+        width: -webkit-fit-content;
+        height: -webkit-fit-content;
+        height: fit-content;
+        height: -moz-fit-content;
+        position: absolute;
+        right: 10px;
+        bottom: 0px;
+    }
+    #display_partners {
+        padding-top: 0px;
+    }
+    #ask_notif {
+        margin: 5%;
+        width: 90%;
+        min-width: unset;
+        padding-bottom: 10px;
+        left: 45%;
+    }
+    .title_notif {
+        font-size: 0.9em;
+        padding-left: unset;
     }
 }

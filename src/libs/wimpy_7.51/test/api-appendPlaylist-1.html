@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>API - appendPlaylist 1</title>
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+<script>
+function doit(){
+	
+	// Get a handle to player 1
+	var player = wimpy.getPlayer("myPlayer1");
+	
+	// Add 2 items be sending in a pipe delimited list.
+	player.appendPlaylist("../song3.mp3|../song1.mp3");
+	
+	
+}
+</script>
+
+
+
+<!-- Player 1 instance -->
+<div id="myPlayer1" data-wimpyPlayer data-sort="none" data-media="../song1.mp3|../song2.mp3"></div>
+<p>&nbsp;</p>
+
+<!-- A simple button to ping the "doit" function. -->
+<p><input type="button" onclick="doit()" value="Add 2 songs" /></p>
+<p>&nbsp;</p>
+
+
+<!-- Description -->
+<p>Example 1 - Append playlist with a pipe delimited list.</p>
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+
+</html>

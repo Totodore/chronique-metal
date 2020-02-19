@@ -1,4 +1,4 @@
-<?php include '../src/html/system/init.php'; 
+<?php include '../../src/html/system/init.php'; 
     ini_set('upload_max_filesize', '10000M');
     ini_set('post_max_size', '10000M');
     ini_set('max_input_time', -1);
@@ -11,30 +11,142 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <title>Admin - Chronique Metal</title>
+    <style>
+        .title {
+            font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-align: center;
+        }
+        #main {
+            background-color: whitesmoke;
+            box-shadow: 0px 0px 40px 7px black;
+            width: -moz-fit-content;
+            width: fit-content;
+            width: -webkit-fit-content;
+            height: -moz-fit-content;
+            height: fit-content;
+            height: -webkit-fit-content;
+            margin: auto;
+            padding: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .form {
+            text-align: center;
+            width: 100%;
+        }
+        .form > input {
+            border: gray 4px solid;
+            transition: all 400ms;
+            border-radius: 4px;
+            padding: 4px;
+            width: 50%;
+            margin: 10px;
+        }
+        .form > input:hover, .form > input:focus {
+            border-color: rgb(46, 46, 46);            
+        }
+        .form > input[type='file'], .form > input[type='submit'] {
+            cursor: pointer;
+        }
+        #infos {
+            margin-top: 10px;
+            width: 100%;
+            text-align: center;
+        }
+        #infos > a {
+            padding: 5px;
+            border: grey solid 4px;
+            border-radius: 4px;
+            text-decoration: none;
+            color: black;
+            transition: all 400ms;
+            display: block;
+            width: -moz-fit-content;
+            width: fit-content;
+            width: -webkit-fit-content;
+            margin: auto;
+            margin-bottom: 13px;
+        }
+        #infos > a:hover {
+            border-color: rgb(46, 46, 46);
+        }
+        #progressBar {
+            margin-top: 10px;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            width: 50%;
+            border-radius: 4px;
+            box-shadow: black 0px 0px 4px 1px inset;
+            background: white;
+            height: 25px;
+        }
+        #progressBar::-webkit-progress-bar {
+            border-radius: 4px;
+            box-shadow: black 0px 0px 4px 1px inset;
+            background: white;
+            height: 25px;
+        }
+        #progressBar::-webkit-progress-value {
+            background-image:
+            -webkit-linear-gradient(-45deg, 
+                                    transparent 33%, rgba(0, 0, 0, .1) 33%, 
+                                    rgba(0,0, 0, .1) 66%, transparent 66%),
+            -webkit-linear-gradient(top, 
+                                    rgba(255, 255, 255, .25), 
+                                    rgba(0, 0, 0, .25)),
+            -webkit-linear-gradient(left, #09c, #f44);
+     
+         border-radius: 4px; 
+         background-size: 35px 25px, 100% 100%, 100% 100%;
+        }
+        #progressBar::-moz-progress-bar {
+            background-image:
+                -moz-linear-gradient(
+                135deg, 
+                transparent 33%, 
+                rgba(0, 0, 0, 0.1) 33%, 
+                rgba(0, 0, 0, 0.1) 66%, 
+                transparent 66% 
+                ),
+                -moz-linear-gradient(
+                top, 
+                rgba(255, 255, 255, 0.25), 
+                rgba(0, 0, 0, 0.25)
+                ),
+                -moz-linear-gradient(
+                left, 
+                #09c, 
+                #f44
+                );
+            border-radius: 4px; 
+            background-size: 35px 25px, 100% 100%, 100% 100%; 
+        }
+    </style>
 </head>
-    <body style="display: flex;">
-        <div>
-            <h1>Uploader un album photos</h1>
-            <form method="POST" enctype="multipart/form-data">
-                <input type="text" required="true" name="titre" placeholder="Titre"/><br /><br />
-                <input type="text" required name="auteur" placeholder="Auteur"/><br /><br />
-                <label>Cela doit etre un fichier .zip obligatoirement.</label><br />
-                <input type="file" name="image" class="photos" /><br /><br />
-                <label>Date du concert</label>
-                <input type="date" name="date" /><br /><br />
-                <input type="submit" value="Uploader" />
-            </form>
-        </div>
-        <div style="float: right; font-size: 1.2em; margin-left:50px">
-            <a href="/">Revenir a la page d'accueil</a><br />
-            <a href="../">Revenir a la page d'administration</a><br />
-            <br />
-            <br />
-            <br />
-            <label>Progression de l'upload :</label><br />
-            <progress max="100" id="progressBar" style="display:none;"></progress>
-            <p class="status"></p>
-        </div>
+    <body>
+        <h1 class="title">Uploader un album photos :</h1>        
+        <main id="main">
+            <div>
+                <form class="form" method="POST" enctype="multipart/form-data">
+                    <input type="text" required name="titre" placeholder="Titre :"/>
+                    <input type="text" required name="auteur" placeholder="Auteur :"/><br />
+                    <label>Selectionnez un fichier compressé obligatoirement en .zip :</label>
+                    <input type="file" name="image" class="photos" required/><br />
+                    <label>Date du concert :</label><br />
+                    <input type="date" name="date" required />
+                    <input type="submit" value="Uploader" /><br />
+                    <label>Pour que cela fonctionne correctement il faut au moins 7 photos par albums.</label>
+                </form>
+            </div>
+            <div id="infos">
+                <label>Progression de l'upload :</label><br />
+                <progress max="100" value="0" id="progressBar"></progress>
+                <p class="status"></p>
+                <a href="../">Revenir à la page d'administration</a>
+                <a href="https://chronique-metal.fr/">Revenir au site de Chronique Metal</a>
+            </div>
+        </main>
     </body>
     <script type="text/javascript">
         $(function() {
@@ -57,7 +169,7 @@
                             console.log('progress', evt.loaded/evt.total*100) 
                             $("progress").val(evt.loaded/evt.total*100);
                             if (evt.loaded/evt.total*100 == 100)
-                                $(".status").html("Decompresion des donnees...");
+                                $(".status").html("Décompresion des données...");
                         };
                         // return the customized object
                         xhr.onreadystatechange = function(event) {

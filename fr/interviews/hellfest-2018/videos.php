@@ -5,11 +5,11 @@
 <html>
     <head>
         <?php include '../../../src/html/system/init.html'; ?>
-        <title>Hellfest 2018 - Chroniques Métal</title>
+        <title>Hellfest 2018 - Chroniques Metal</title>
         <meta name="description" content="Retrouvez içi toutes mes vidéos d'interviews" />
         <link rel="stylesheet" type="text/css" media="screen" href="/src/css/videos.css" />
         <script type="text/javascript" src="/src/js/videos.js"></script>
-        <script>var playlist = "AIzaSyCLdPtkKoVLXxW-EkXPCD-LT6onpJHhCZY";</script>
+        <script>var playlist = "PLfXkEVCWgVVOgNCnfpTD6RSU9ebsNFMPP";</script>
     </head>
 <body>
     <div id="wrapper">

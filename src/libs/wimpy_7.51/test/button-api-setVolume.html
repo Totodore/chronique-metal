@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>Button - API - setSize</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+<!-- Wimpy Button Styles 
+NOTE: These <link> references should go into the <head>, 
+they are located here so they show up on the page.
+-->
+<link href="../wimpy.buttons/WimpyButton_7779840.css" rel="stylesheet" type="text/css">
+
+<!-- Wimpy Button Instance -->
+<p><span id="myButtonElementID" class="WimpyButton_7779840" data-wimpybutton="../song1.mp3" data-volume="0.3"></span> <br />Song 1 volume = 0.3</p>
+<p><span id="myButtonElementID" class="WimpyButton_7779840" data-wimpybutton="../song1.mp3" data-volume="0.5"></span> <br />Song 1 volume = 0.5</p>
+<p><span id="myButtonElementID" class="WimpyButton_7779840" data-wimpybutton="../song1.mp3" data-volume="1"></span> <br />Song 1 volume = 1</p>
+<p><span id="myButtonElementID" class="WimpyButton_7779840" data-wimpybutton="../song1.mp3"></span> <br />Song 1 volume not set</p>
+
+<!-- Use javascript to adjust button volume -->
+<p><button onclick="wimpyButton.setVolume(0.3)">Set volume to 0.3</button></p>
+<p><button onclick="wimpyButton.setVolume(0.5)">Set volume to 0.5</button></p>
+<p><button onclick="wimpyButton.setVolume(1)">Set volume to 1</button></p>
+
+
+
+
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

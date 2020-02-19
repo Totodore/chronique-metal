@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>option-responsive-1</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+</head>
+
+
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+
+
+
+<style>
+
+.myPlayerDiv {
+	position:relative;
+	display:inline-block;
+	width:400px;
+	height:200px;
+}
+
+/* #Media Queries
+================================================== */
+
+	@media only screen and (max-width: 5000px) {
+		.myPlayerDiv {
+			width:2200px;
+			height:600px;
+		}
+	}
+
+	@media only screen and (max-width: 2500px) {
+		.myPlayerDiv {
+			width:2000px;
+			height:600px;
+		}
+	}
+	
+	@media only screen and (max-width: 2400px) {
+		.myPlayerDiv {
+			width:1900px;
+			height:600px;
+		}
+	}
+	
+	@media only screen and (max-width: 2300px) {
+		.myPlayerDiv {
+			width:1800px;
+			height:500px;
+		}
+	}
+	
+	@media only screen and (max-width: 2200px) {
+		.myPlayerDiv {
+			width:1700px;
+			height:500px;
+		}
+	}
+	
+	@media only screen and (max-width: 2100px) {
+		.myPlayerDiv {
+			width:1600px;
+			height:500px;
+		}
+	}
+	
+	@media only screen and (max-width: 2000px) {
+		.myPlayerDiv {
+			width:1500px;
+			height:500px;
+		}
+	}
+	
+	@media only screen and (max-width: 1900px) {
+		.myPlayerDiv {
+			width:1400px;
+			height:400px;
+		}
+	}
+	
+	@media only screen and (max-width: 1800px) {
+		.myPlayerDiv {
+			width:1300px;
+			height:400px;
+		}
+	}
+	
+	@media only screen and (max-width: 1700px) {
+		.myPlayerDiv {
+			width:1200px;
+			height:400px;
+		}
+	}
+	
+	@media only screen and (max-width: 1600px) {
+		.myPlayerDiv {
+			width:1100px;
+			height:400px;
+		}
+	}
+	
+	@media only screen and (max-width: 1500px) {
+		.myPlayerDiv {
+			width:1000px;
+			height:300px;
+		}
+	}
+	
+	@media only screen and (max-width: 1400px) {
+		.myPlayerDiv {
+			width:900px;
+			height:300px;
+		}
+	}
+	
+	@media only screen and (max-width: 1300px) {
+		.myPlayerDiv {
+			width:800px;
+			height:200px;
+		}
+	}
+	
+	@media only screen and (max-width: 1200px) {
+		.myPlayerDiv {
+			width:700px;
+			height:200px;
+		}
+	}
+	
+	@media only screen and (max-width: 1100px) {
+		.myPlayerDiv {
+			width:600px;
+			height:200px;
+		}
+	}
+	
+	@media only screen and (max-width: 1000px) {
+		.myPlayerDiv {
+			width:500px;
+			height:200px;
+		}
+	}
+
+	@media only screen and (max-width: 900px) {
+		.myPlayerDiv {
+			width:400px;
+			height:200px;
+		}
+	}
+
+	@media only screen and (max-width: 800px) {
+		.myPlayerDiv {
+			width:300px;
+			height:200px;
+		}
+	}
+
+	@media only screen and (max-width: 700px) {
+		.myPlayerDiv {
+			width:200px;
+			height:100px;
+		}
+	}
+
+	@media only screen and (max-width: 600px) {
+		.myPlayerDiv {
+			width:100px;
+			height:50px;
+		}
+	}
+	
+	
+
+	
+</style>
+
+
+
+<!-- Wimpy Player Instance -->
+
+<!-- NOTE: Wimpy will only active "responsive" mode when the DIV has either a 
+class or a style attribute definition. In addition, the data-responsive flag needs to be set manually. -->
+<div class="myPlayerDiv" data-wimpyPlayer data-skin="../wimpy.skins/arc.tsv" data-responsive></div>
+
+
+<!-- Description -->
+<p>Responsive - Change browser window size (or device orientation) to see changes</p>
+
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

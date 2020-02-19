@@ -5,7 +5,7 @@
 <html>
     <head>
         <?php include '../../../src/html/system/init.html'; ?>
-        <title>Interviews écrites - Chroniques Métal</title>
+        <title>Interviews écrites - Chroniques Metal</title>
         <meta name="description" content="Retrouvez içi toutes mes interviews écrites des différents groupes que j'ai rencontré" />
         <link rel="stylesheet" type="text/css" media="screen" href="/src/css/texts.css" />
         <script type="text/javascript" src="/src/js/texts.js"></script>

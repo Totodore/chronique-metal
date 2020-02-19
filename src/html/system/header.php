@@ -35,7 +35,7 @@
 					<li><a href="/fr/concerts/reports/">Reports</a></li>
 				</ul>
 			</li>
-			<li><a href="/fr/live-radio/">Live Radio</a></li>
+			<li><a href="/fr/live-radio/">Radio Metal Sound</a></li>
 		</ul>
 	</nav>
 	<nav id="nav_mobile">
@@ -66,7 +66,7 @@
 					<li><a href="/fr/concerts/reports/">Reports</a></li>
 				</ul>
 			</li>
-			<li><a href="/fr/live-radio/">Live Radio</a></li>
+			<li><a href="/fr/live-radio/">Radio Metal Sound</a></li>
 		</ul>
 	</nav>
 </div>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>Graphic EQ</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+<!-- Wimpy Graphic EQ -->
+<script src="../wimpy.eq/wimpy.eq.js"></script>
+<!-- Wimpy Graphic EQ Renderer(s)-->
+<script src="../wimpy.eq/renderers/Spectrograph.js"></script>
+<script src="../wimpy.eq/renderers/Peaks.js"></script>
+<script src="../wimpy.eq/renderers/Burst.js"></script>
+<script src="../wimpy.eq/renderers/Line.js"></script>
+<script src="../wimpy.eq/renderers/Spectrograph.js"></script>
+<script src="../wimpy.eq/renderers/Carbon.js"></script>
+<script src="../wimpy.eq/renderers/DesertStorm.js"></script>
+<script src="../wimpy.eq/renderers/Arora.js"></script>
+<script src="../wimpy.eq/renderers/Flame.js"></script>
+<script src="../wimpy.eq/renderers/Flame2.js"></script>
+<script src="../wimpy.eq/renderers/Mist.js"></script>
+<script src="../wimpy.eq/renderers/Wispy.js"></script>
+<script src="../wimpy.eq/renderers/Planks.js"></script>
+<script src="../wimpy.eq/renderers/Planks2.js"></script>
+<script src="../wimpy.eq/renderers/LED.js"></script>
+<script src="../wimpy.eq/renderers/NightLake.js"></script>
+<script src="../wimpy.eq/renderers/Fabric.js"></script>
+<script src="../wimpy.eq/renderers/Blade.js"></script>
+<script src="../wimpy.eq/renderers/Cones.js"></script>
+<script src="../wimpy.eq/renderers/Traditional.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+<div id="myPlayer" style="background-color:#000000"  
+	data-wimpyplayer 
+	data-media="../song1.mp3|../song2.mp3|../song3.mp3" 
+	data-skin="../wimpy.skins/realeq1.tsv" 
+	data-eq="Carbon" 
+	data-eqBands="64" 
+	data-eqSmoothing="2">
+</div>
+
+
+<!-- Description -->
+<style>
+.eqSelect {
+	display : inline-block;
+	width : 100px;
+	text-align: center;
+	padding : 5px;
+}
+.selected {
+	background-color : #0069d9;
+	color : #FFFFFF;
+}
+
+</style>
+<div class="eqGroup">
+	<span class="eqSelect" onclick="setRenderer('Arora', this)"><img src="../wimpy.eq/renderers/Arora.small.jpg" />Arora</span>
+	<span class="eqSelect" onclick="setRenderer('Blade', this)"><img src="../wimpy.eq/renderers/Blade.small.jpg" />Blade</span>
+	<span class="eqSelect" onclick="setRenderer('Burst', this)"><img src="../wimpy.eq/renderers/Burst.small.jpg" />Burst</span>
+	<span class="eqSelect" onclick="setRenderer('Carbon', this)"><img src="../wimpy.eq/renderers/Carbon.small.jpg" />Carbon</span>
+	<span class="eqSelect" onclick="setRenderer('Cones', this)"><img src="../wimpy.eq/renderers/Cones.small.jpg" />Cones</span>
+	<span class="eqSelect" onclick="setRenderer('DesertStorm', this)"><img src="../wimpy.eq/renderers/DesertStorm.small.jpg" />DesertStorm</span>
+	<span class="eqSelect" onclick="setRenderer('Fabric', this)"><img src="../wimpy.eq/renderers/Fabric.small.jpg" />Fabric</span>
+	<span class="eqSelect" onclick="setRenderer('Flame', this)"><img src="../wimpy.eq/renderers/Flame.small.jpg" />Flame</span>
+	<span class="eqSelect" onclick="setRenderer('Flame2', this)"><img src="../wimpy.eq/renderers/Flame2.small.jpg" />Flame2</span>
+	<span class="eqSelect" onclick="setRenderer('LED', this)"><img src="../wimpy.eq/renderers/LED.small.jpg" />LED</span>
+	<span class="eqSelect" onclick="setRenderer('Line', this)"><img src="../wimpy.eq/renderers/Line.small.jpg" />Line</span>
+	<span class="eqSelect" onclick="setRenderer('Mist', this)"><img src="../wimpy.eq/renderers/Mist.small.jpg" />Mist</span>
+	<span class="eqSelect" onclick="setRenderer('NightLake', this)"><img src="../wimpy.eq/renderers/NightLake.small.jpg" />NightLake</span>
+	<span class="eqSelect" onclick="setRenderer('Peaks', this)"><img src="../wimpy.eq/renderers/Peaks.small.jpg" />Peaks</span>
+	<span class="eqSelect" onclick="setRenderer('Planks', this)"><img src="../wimpy.eq/renderers/Planks.small.jpg" />Planks</span>
+	<span class="eqSelect" onclick="setRenderer('Planks2', this)"><img src="../wimpy.eq/renderers/Planks2.small.jpg" />Planks2</span>
+	<span class="eqSelect" onclick="setRenderer('Spectrograph', this)"><img src="../wimpy.eq/renderers/Spectrograph.small.jpg" />Spectrograph</span>
+	<span class="eqSelect" onclick="setRenderer('Traditional', this)"><img src="../wimpy.eq/renderers/Traditional.small.jpg" />Traditional</span>
+</div>
+
+<script>
+
+var lastClicker;
+function setRenderer(renderer, clicker){
+	wimpy.getPlayer("myPlayer").setEqRenderer(renderer);
+
+	if(lastClicker){
+		lastClicker.classList.toggle('selected');
+	}
+	clicker.classList.toggle('selected');
+	lastClicker = clicker;
+
+}
+</script>
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

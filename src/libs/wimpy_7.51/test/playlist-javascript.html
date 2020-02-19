@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>inchworm</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+<!-- The DIV to put wimpy into -->
+<div id="MyTarget"></div>
+
+<script>
+
+// A javascript playlist:
+var playlist = [
+    {
+        file:"../song1.mp3",
+        title:"Song One"
+    },
+   
+    {
+        file:"../song2.mp3",
+        title:"Song Two",
+    }
+];
+
+// Create the player
+var myPlayer = new wimpyPlayer({
+			target		: "MyTarget",           
+			media		: playlist, // Setting the javascript "playlist" var here
+			startUpText : "hello" 
+});
+</script>
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

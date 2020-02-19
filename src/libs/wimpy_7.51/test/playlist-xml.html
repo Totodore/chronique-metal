@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>inchworm</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+<!-- Referencing an XML file -->
+<div data-wimpyplayer data-media="playlist-example1.xml"></div>
+
+<!-- Acquiring XML through a server-side-script, and setting the kind explicitly. -->
+<div data-wimpyplayer data-media='{"file":"playlist-example2.xml?foo=1&bar=2", "kind":"xml"}'></div>
+
+<!-- Using raw XML -->
+<div data-wimpyplayer data-media='<playlist>
+	<item>
+		<file>../song1.mp3</file>
+		<title>Song 1</title>
+		<artist>Artist 1</artist>
+		<image>../song1.jpg</image>
+	</item>
+	<item>
+		<file>../song2.mp3</file>
+		<title>Song 2</title>
+		<artist>Artist 2</artist>
+		<image>../song2.jpg</image>
+	</item>
+</playlist>'></div>
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

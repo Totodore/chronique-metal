@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>Button - a list of buttons</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+<!-- Wimpy Button Style -->
+<link href="../wimpy.buttons/WimpyButton_7779840.css" rel="stylesheet" type="text/css">
+
+<style type="text/css">
+	
+	.track-wrapper {
+		white-space : nowrap; /* don't let the text wrap under the button */
+		margin-bottom : 5px;
+		font-family : Helvetica, Arial;
+		font-size : 15px;
+		border : 1px solid #CCCCCC;
+		background-color : #EDF5FF;
+	}
+
+	/* this class already exists, we're just altering (overwriting) the sizing a tad */
+	.WimpyButton_7779840 {
+		font-size : 15px; /* this sets the size of the button! */
+		line-height : 1.5em;
+		width : 1.5em;
+		height : 1.5em;
+	}
+
+</style>
+
+<!-- Wimpy Button Instance -->
+<div class="track-wrapper">
+	<div class="WimpyButton_7779840" data-wimpybutton="/wimpy/song1.mp3"></div>
+	<span>This is track 1</span>
+</div>
+
+<div class="track-wrapper">
+	<div class="WimpyButton_7779840" data-wimpybutton="/wimpy/song2.mp3"></div>
+	<span>This is track 2</span>
+</div>
+
+<div class="track-wrapper">
+	<div class="WimpyButton_7779840" data-wimpybutton="/wimpy/song3.mp3"></div>
+	<span>This is track 3</span>
+</div>
+
+<p>&nbsp;</p>
+
+<!-- Description -->
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>
+
+

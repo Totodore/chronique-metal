@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>multiple players - 4</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+
+<div data-wimpyPlayer
+ data-skin="../wimpy.skins/not-exist.tsv"></div>
+<p> The skin above should fail and use the default</p>
+
+<div data-wimpyPlayer
+ data-skin="../wimpy.skins/003.tsv"></div>
+<div data-wimpyPlayer
+ data-skin="../wimpy.skins/045.tsv"></div>
+<div data-wimpyPlayer
+ data-skin="../wimpy.skins/111.tsv"></div>
+<div data-wimpyPlayer
+ data-skin="../wimpy.skins/flume.tsv"></div>
+
+<!-- Description -->
+<p>Multiple Players</p>
+
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

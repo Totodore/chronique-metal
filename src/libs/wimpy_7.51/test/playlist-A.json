@@ -1,0 +1,17 @@
+[
+	{
+  		  "file" : "playlist-A.json"
+		, "title" : " Playlist A 1"
+		, "image" : "http://beeb/wimpy/test/playlist-A.jpg"
+	},
+	{
+  		  "file" : "playlist-B.json"
+		, "title" : " Playlist B"
+		, "image" : "http://beeb/wimpy/test/playlist-B.jpg"
+	},
+	{
+  		  "file" : "playlist-C.json"
+		, "title" : " Playlist C"
+		, "image" : "http://beeb/wimpy/test/playlist-C.jpg"
+	}
+]

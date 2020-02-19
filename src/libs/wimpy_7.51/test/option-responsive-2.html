@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>option responsive 2</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+
+
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+
+
+<style type="text/css" media="screen">
+	
+	.playerMax {
+		width : 100%;
+		height : 100%;
+	}
+	
+	#myPlayerWrapper {
+		display : none;
+		overflow:hidden;
+		width : 760px; height : 500px;
+		
+		-webkit-transition : all, 500ms, ease-out;
+		-moz-transition : all, 500ms, ease-out;
+		-ms-transition : all, 500ms, ease-out;
+		-o-transition : all, 500ms, ease-out;
+		transition : all, 500ms, ease-out;
+	}
+	
+	@media only screen and (max-width: 960px) {
+		#myPlayerWrapper { width : 400px; height : 260px; }	
+	}
+
+	@media only screen and (max-width: 767px) {
+		#myPlayerWrapper { width : 200px; height : 130px; }
+	}
+
+	@media only screen and (max-width: 480px) {
+		#myPlayerWrapper { width : 100px; height : 70px; }
+	}
+	
+</style>
+
+<script>
+
+// Maintain a varible indicating the current state.
+var state = false;
+
+// This function get's pinged by out INPUT button.
+function toggle(){
+	
+	// Snag a handle to the wrapper element.
+	var elem = document.getElementById("myPlayerWrapper");
+	
+	// Snag a handle to the player object.
+	var player = wimpy.getPlayer("myPlayer");
+	
+	// If we're hidden, then show and vice versa.
+	if(!state){
+
+		// Show the wrapper.
+		elem.style.display = "block";
+	
+	} else {
+
+		// Hide the wrapper
+		elem.style.display = "none";
+	
+	}
+	
+	// Toggle state to it's opposite counter-part.
+	state = !state;
+}
+
+function playDirect(file){
+	
+	// Un-hide the wrapper
+	var wrapperElem = document.getElementById("myPlayerWrapper");
+	wrapperElem.style.display = "block";
+	
+	state = 1;
+	
+	// Play the file directly
+	var myPlayer = wimpy.getPlayer("myPlayer");
+	myPlayer.play(file);
+	
+}
+</script>
+
+
+<!-- A simple button to toggle the wrapper's visibiliy -->
+<p><input type="button" onclick="toggle()" value="Toggle Wrapper Visibility" /></p>
+
+
+<!-- Wrap the player in a DIV so we can manipulate visiblity 
+(and other things) without disrupting the player -->
+<div id="myPlayerWrapper">
+	
+<!-- We'll set the player's class to fill 100% width/height of the wrapper. -->
+
+<!-- NOTE: Wimpy will only active "responsive" mode when the DIV has either a 
+class or a style attribute definition. In addition, the data-responsive flag needs to be set manually. -->
+	<div id="myPlayer" class="playerMax" data-wimpyPlayer data-skin="../wimpy.skins/video_player_2.tsv" data-media="../video1.mp4" data-responsive></div>
+	
+</div>
+
+
+<p><input type="button" onclick="playDirect('../video1.mp4')" value="Play Direct" /></p>
+
+<!-- Description -->
+<p>Re-size the browser window to see how the player resizes based on the &quot;wrapper&quot; size.</p>
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

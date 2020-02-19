@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>inchworm</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+<script>
+
+// Put variable on the window scope so all function have access to the var.
+var player;
+
+var myPlaylist1 = '[{"title":"json track 1","file":"../song1.mp3"},{"title":"json track 2","file":"../song2.mp3"},{"title":"json track 3","file":"../song3.mp3"}]';
+
+var myPlaylist2 = [
+					{
+						title : "js track 1",
+						file : "../song1.mp3"
+					},
+					{
+						title : "js track 2",
+						file : "../song2.mp3"
+					},
+					{
+						title : "js track 2",
+						file : "../song2.mp3"
+					}
+				];
+
+// The function to edit the "live" playlist
+function loadAndPlayPlaylist(playlist, kind){
+
+	if( ! player ){
+		player = wimpy.getPlayer("myPlayer");
+	}
+	
+	// Note that the second argument is set to "2", which represents 
+	// the array index of 2, NOT the second item in the playlist.
+	// So if you want to play the first item use ZERO as the argument.
+	player.setPlaylist(playlist, 2, kind);
+	
+}
+
+</script>
+
+<div id="myPlayer" data-wimpyplayer data-media="none"></div>
+
+
+<p onclick="loadAndPlayPlaylist('../song1.mp3|../song2.mp3|../song3.mp3', 'dtxt')">click to load and play playlist</p>
+<p onclick="loadAndPlayPlaylist(myPlaylist1, 'json')">click to load and play playlist</p>
+<p onclick="loadAndPlayPlaylist(myPlaylist2, 'js')">click to load and play playlist</p>
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

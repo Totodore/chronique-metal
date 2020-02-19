@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>coverArt</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+          
+
+<!-- stretch to fit -->
+<div data-wimpyPlayer
+	data-skin="../wimpy.skins/arc.tsv"
+	data-coverArt="../coverart-test.jpg"
+	data-coverArtFit=1
+	>
+</div>
+<p>Cover Art Fit set to 1 = stretch to fit</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+<!-- contain -->
+<div data-wimpyPlayer
+	data-skin="../wimpy.skins/arc.tsv"
+	data-media="../song1.mp3"
+	data-coverArt="../coverart-test.jpg"
+	data-coverArtFit=2
+	>
+</div>
+<p>Cover Art Fit set to 2 = contain</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+
+<!-- original size -->
+<div data-wimpyPlayer
+	data-skin="../wimpy.skins/arc.tsv"
+	data-media="../song1.mp3"
+	data-coverart="../coverart-test.jpg"
+	data-coverArtFit=3
+	>
+</div>
+<p>Cover Art Fit set to 3 = original size</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+<!-- defaults to stretch to fit -->
+<div data-wimpyPlayer
+	data-skin="../wimpy.skins/arc.tsv"
+	data-media="../song1.mp3"
+	data-coverart="../coverart-test.jpg"
+	>
+</div>
+<p>Cover Art Fit not set, defaults to (1) stretch to fit</p>
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

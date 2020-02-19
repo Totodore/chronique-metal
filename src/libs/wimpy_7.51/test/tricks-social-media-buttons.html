@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>Social Media share buttons - facebook & twitter</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+<div id="myPlayer" data-wimpyplayer data-skin="../wimpy.skins/301-social.tsv"></div>
+
+<script>
+
+// Keep the player variable on the window scope:
+var player;
+
+function gotoFacebook(){
+	window.open("http://www.facebook.com/sharer/sharer.php?u=http://www.wimpyplayer.com");
+}
+
+function gotoTwitter(){
+	window.open("https://twitter.com/share?url=http://www.wimpyplayer.com");
+}
+
+wimpy.onReady(function(){
+	player = wimpy.getPlayer("myPlayer");
+	player.getSkinElement("facebook").addMEL("mouseDown", gotoFacebook);
+	player.getSkinElement("twitter").addMEL("mouseDown", gotoTwitter);
+
+});
+
+</script>
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

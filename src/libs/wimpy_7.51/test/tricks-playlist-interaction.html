@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>API - linkHandler</title>
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+
+<script>
+
+// A custom function to handle user clicks.
+function myLinkHandler(returnedItemData){
+	
+	// Pop up a confirmation dialog.
+	var answer = confirm ("Are you sure you want to delete this playlist item?");
+	
+	// Only delete if the user is sure.
+	if (answer){
+		player.removePlaylistItems("i", returnedItemData.i);
+	}
+	
+}
+
+// Create a new player
+var player = new wimpyPlayer({
+		linkEnable : 1, // Turns the link icon on all the time.
+		glyphLink : "x" // Assigning a custom icon to the link icon.
+	});
+
+
+// Setting the "setLinkHandler" to the "myLinkHandler" function above.
+player.setLinkHandler(myLinkHandler);
+
+
+</script>
+
+<p>&nbsp;</p>
+Here we're setting a link handler to over-ride and hijack the default player functionality. In this case, we want to allow users to modify the playlist by removing items.
+<p>&nbsp;</p>
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+
+</html>

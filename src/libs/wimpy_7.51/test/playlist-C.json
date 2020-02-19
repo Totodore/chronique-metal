@@ -1,0 +1,17 @@
+[
+	{
+  		  "file" : "../song1.mp3"
+		, "title" : " Song 1"
+		, "image" : "../song1.jpg"
+	},
+	{
+  		  "file" : "../song2.mp3"
+		, "title" : " Song 2"
+		, "image" : "../song2.jpg"
+	},
+	{
+  		  "file" : "../song3.mp3"
+		, "title" : " Song 3"
+		, "image" : "../song3.jpg"
+	}
+]

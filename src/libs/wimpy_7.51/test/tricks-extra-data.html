@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>Tricks - Rating</title>
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+<div id="myPlayerTarget">Player goes in here:<br/></div>
+
+
+<script>
+
+// Set up vars to use as "handles" to our custom skin objects.
+// Place vars outside of all functions, so all functions have access to the vars.
+var textObject_date;
+var textObject_price;
+var textObject_other;
+
+// Grab references ("handles") to our custom skin elements.
+// This method is called using the "onReady" player API.
+// http://www.wimpyplayer.com/docs/api/onReady.html
+function grabCustomObjects(){
+	
+	// Using the "getSkinElement" API player method.
+	// http://www.wimpyplayer.com/docs/api/getSkinElement.html
+	textObject_date = player.getSkinElement("my_date");
+	textObject_price = player.getSkinElement("my_price");
+	textObject_other = player.getSkinElement("my_other");
+	
+	// Clear the dummy text that is in our skin. 
+	// NOTE: The "setText" method is part of the as-of-yet undocumented jbeeb TextBox API.
+	textObject_date.setText("");
+	textObject_price.setText("");
+	textObject_other.setText("");
+}
+
+// This function is called each time a new track is played because we set up an event listener for the "play" event. The trackData argument returned is a trackDataset object as described at the following link:
+// http://www.wimpyplayer.com/docs/trackDataset.html
+function updateTrackInfo(trackData){
+	
+	// NOTE: The "setText" method is part of the as-of-yet undocumented jbeeb TextBox API.
+	textObject_date.setText(trackData.date);
+	textObject_price.setText(trackData.price);
+	textObject_other.setText(trackData.other);
+
+}
+
+
+// Create a new player
+var player = new wimpyPlayer({
+		  target : "myPlayerTarget"
+		, skin : "tricks-extra-data-skin.tsv"
+		, media : "tricks-extra-data-playlist.txt"
+		, onReady : grabCustomObjects // including a player onReady callback
+	});
+
+// Add a "play" event listener so we can update the skin each time a track is launched. See:
+// http://www.wimpyplayer.com/docs/api/event.addListener.html
+// ... and here's a list of all available listeners:
+// http://www.wimpyplayer.com/docs/api/event.listener.ref.html
+player.addEventListener("play", updateTrackInfo);
+
+
+</script>
+
+<p>&nbsp;</p>
+Click a star... but you'll first need to play a track! 
+<p>&nbsp;</p>
+
+<pre id="output">Output goes here</p>
+
+<p>&nbsp;</p>
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+
+</html>

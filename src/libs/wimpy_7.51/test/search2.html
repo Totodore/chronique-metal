@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>DEV search</title>
+
+
+
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+</head>
+<body>
+
+
+<div id="myPlayer" data-wimpyPlayer data-skin="../wimpy.skins/Searcher.tsv" data-media="../wimpy.php"></div>
+
+
+<script>
+
+// Global vars (so we can use them in all the functions
+var player;
+var playlist;
+var originalPlaylist;
+var searchTextBox;
+
+function setupSearch() {
+
+	player = wimpy.getPlayer("myPlayer");
+
+	searchTextBox = player.getSkinElement("search");
+	searchTextBox.setEditable(true);
+	searchTextBox.addEventListener("enter", wimpySearch, this);
+
+	var searchButton = player.getSkinElement("searchButton");
+	searchButton.addMEL("mouseDown", wimpySearch, this);
+
+	var searchCancel = player.getSkinElement("searchCancel");
+	searchCancel.addMEL("mouseDown", restorePlaylist, this);
+	
+}
+
+function restorePlaylist(){
+	if(originalPlaylist){
+		player.setPlaylist(originalPlaylist);
+	} else {
+		player.setPlaylist("../wimpy.php");
+	}
+}
+
+
+function wimpySearch(){
+	
+	// Get the value of the entered text
+	var cleanText = searchTextBox.text;
+
+	if(cleanText.length){
+		
+		if(cleanText){
+			
+			cleanText = cleanText.toLowerCase();
+			playlist = player.getPlaylist();
+
+			// Make a copy of the first-time playlist so we can restore it if we need to.
+			if( ! originalPlaylist ){
+				originalPlaylist = playlist.slice();
+			}
+
+			var searchResults = [];
+
+			var gotoIndex = -1;
+			for(var i=0; i<playlist.length; i++){
+				item = playlist[i];
+
+				// Since we're just looking for text that matches we can jam all the 
+				// text for the fields we want to search against into one long string
+				// then just look for a match on the long string as opposed to searching
+				// each individual field one-at-a-time.
+				var gang = (item.title + item.artist + item.album + item.file).toLowerCase();
+
+				if( gang.indexOf(cleanText) > -1 ){
+					searchResults.push(item);
+				}
+				
+			}
+
+			if(searchResults.length){
+				player.setPlaylist(searchResults);
+			}
+
+		}
+	} else {
+		restorePlaylist();
+	}
+
+}
+
+wimpy.onReady(setupSearch);
+
+</script>
+
+<!-- Description -->
+This search makes a request to the server to discover all tracks that match the search term based on the file name.
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

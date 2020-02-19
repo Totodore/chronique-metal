@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>API - setSkin 2</title>
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+
+
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+
+
+<!-- Set up a player with the ID attribute set to "myPlayer" -->
+<div id="myPlayer" data-wimpyPlayer
+></div>
+
+<!-- All in a single call -->
+<p>&nbsp;</p>
+<p><input type="button" onclick="wimpy.getPlayer('myPlayer').setSkin(null)" value="Change Skin : default" /></p>
+<p><input type="button" onclick="wimpy.getPlayer('myPlayer').setSkin('../wimpy.skins/Slick.tsv')" value="Change Skin : Slick" /></p>
+<p><input type="button" onclick="wimpy.getPlayer('myPlayer').setSkin('../wimpy.skins/video_player_1.tsv')" value="Change Skin : Video Player" /></p>
+<p>&nbsp;</p>
+
+<!-- Description -->
+<pre>Change skin
+See the source code for clarity</pre>
+
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

@@ -1,0 +1,219 @@
+.player {
+	font-family : "Helvetica Neue", Helvetica, Arial, _sans;
+	background-color : #444444;
+	width : 360px;
+	padding : 20px;
+}
+.basicButton {
+	display : inline-block;
+	color : #000000;
+	background-color : #EFEFEF;
+	border : 1px solid #CCCCCC;
+	padding : 0 10px 0 10px; /* T R B L */
+	font-family : "WimpyPlayerGlyphs";
+	border-radius : 3px;
+}
+
+.basicButton.active {
+	color : #FFFFFF;
+	background-color : #3969F4;
+	border : 1px solid #FFFFFF;
+}
+
+.basicButton.play:before {
+	content : "p";
+}
+.basicButton.pause:before {
+	content : "q";
+}
+
+.basicButton.muted, .basicButton.loopOne, .basicButton.loopAll {
+	background-color : #00FF00;
+	color : #FFFFFF;
+}
+
+.basicButton.mute:before {
+	content : "M";
+}
+.basicButton.muted:before {
+	content : "m";
+}
+
+.basicButton.loop:before, .basicButton.loopOne:before {
+	content : "l";
+}
+
+.basicButton.loopOne:before {
+	content : "L";
+}
+
+
+
+.thinker {
+	display : inline-block;
+	width : 16px;
+	height : 16px;
+	font-size: 16px;
+	line-height : 16px; /* this keeps the font centered vertically whilest spinning */
+	font-family : "WimpyPlayerGlyphs"
+}
+.time, .info {
+	display : inline-block;
+	position : relative;
+	white-space : nowrap;
+	background-color : #777777;
+	padding : 0 5px 0 5px; /* TRBL*/
+	border-radius : 3px;
+	color : #FFC300;
+	white-space : nowrap;
+}
+.coverart {
+	display : inline-block;
+	width : 100px;
+	height : 100px;
+	background-color : #797979;
+	background-size : contain; /* 100% 100%   contain    cover */
+	background-repeat : no-repeat;
+	background-position : center center;
+}
+
+.back {
+	font-family : "WimpyPlayerGlyphs";
+	display : inline-block;
+	position : absolute;
+	top: 0px;
+	left : -38px;
+	height : 20px;
+	padding : 5px 10px 0px 10px; /* T R B L */
+	background-color : #FFFFFF;
+	border : 1px solid #CCC;
+	z-index : 100;
+	white-space:nowrap;
+	cursor : pointer;
+}
+
+.back:before {
+  content: "<"; /* See wimpy_GLYPHS-MAP.html */
+}
+
+/* ============================
+   Seek
+   ============================ */
+.seekWrapper {
+	width : 100%;
+	height : 20px;
+	background-color : #CCCCCC;
+	border : 1px solid #00FF00;
+}
+.seek {
+	width : 20%;
+	height : 18px;
+	background-color : #EFEFEF;
+	border : 1px solid #00FF00;
+}
+
+/* ============================
+   Loading
+   ============================ */
+.loadingWrapper {
+	position : relative; /* use absolute to resize right-to-left */
+	width : 100%;
+	height : 20px;
+	background-color : #CCCCCC;
+	border : 1px solid #FF0000;
+}
+.loading {
+	position : absolute; /* use absolute to resize right-to-left */
+	width : 20%;
+	height : 18px;
+	right : 0px; /* allows width % to go right-to-left */
+	background-color : #EFEFEF;
+	border : 1px solid #FF0000;
+}
+
+/* ============================
+   Playlist
+   ============================ */
+
+.playlistWrapper {
+	overflow-y : auto;
+	overflow-x : hidden;
+	position : relative;
+	margin: auto; /* horzontal centering inside the "block" wrapper */
+	width : 350px;
+	height : 300px;
+	border-radius : 6px;
+}
+.playlist {
+	display : block;
+	position : relative;
+	width : 340px;
+}
+/* First (and odd numbered) playlist item background color 
+.playlist > div:nth-child(2n + 1) {
+	background-color : #FFFFFF;
+}
+Second (and even numbered) playlist item background color 
+.playlist > div:nth-child(2n) {
+	background-color : #F9F9F9;
+}
+*/
+.playlistItem {
+	padding : 5px;
+	background-color : #F9F9F9;
+	border-top : 1px solid #CCC;
+	color : #777777;
+	text-align: left;
+	cursor : pointer;
+	-webkit-transition: all 0.3s ease;                  
+	    -moz-transition: all 0.3s ease;                 
+	    -o-transition: all 0.3s ease;   
+	    -ms-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	overflow : hidden;
+}
+.playlistItem.playing {
+	background-color : #333333;
+	color : #FFFFFF;
+}
+.playlistItem:hover.playing, .playlistItem:hover {
+	background-color : #FFC300;
+	color : #FFFFFF;
+}
+.playlistItemTitle, .playlistItemArtist .playlistItemAlbum, .playlistItemImage {
+	display : block;
+	position : relative;
+	white-space : nowrap;
+}
+.playlistItemTitle:before, .playlistItemArtist:before, .playlistItemAlbum:before {
+	color : #888888;
+	font-size : 12px;
+}
+.playlistItemTitle:before {
+	content: "title : ";
+}
+.playlistItemArtist:before {
+	content: "artist : ";
+}
+.playlistItemAlbum:before {
+	content: "album : ";
+}
+.playlistItemImage {
+	width : 60px;
+	height : 60px;
+	background-color : #555555;
+	background-size : contain; /* 100% 100%   contain    cover */
+	background-repeat : no-repeat;
+	background-position : center center;
+	float : left;
+	margin-right : 10px;
+}
+
+.noSelect {
+	/* Prevent text from being selected */
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+

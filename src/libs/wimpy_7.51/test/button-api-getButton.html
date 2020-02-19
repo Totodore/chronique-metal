@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>Button - API - setSize</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+<!-- Wimpy Button Styles 
+NOTE: This <link> references should go into the <head>.
+-->
+<link href="../wimpy.buttons/WimpyButton_7779840.css" rel="stylesheet" type="text/css">
+
+
+
+<div id="myButton1" class="WimpyButton_7779840" data-wimpybutton="../song1.mp3"></div>
+<p>&nbsp;</p>
+
+
+<button onclick="getWimpyButtonInfo()">Get Info</button>
+<p>&nbsp;</p>
+
+
+<div id="output">output</div>
+<p>&nbsp;</p>
+
+
+<script>
+function getWimpyButtonInfo(){
+
+	var button1 = wimpy.getButtonBy("id", "myButton1");
+	
+	var see = "";
+	for(var prop in button1){
+		var val = button1[prop] || "null";
+
+		see += prop + " : " + val.toString() + "<br>";
+	}
+	/*
+	var newline = "<br>";
+
+	var see = "";
+	see += "file: " 		+ button1.file + newline;
+	see += "id: " 			+ button1.id + newline;
+	//see += button1.element + newline; // can't really show this here.
+	see += "limit: " 		+ button1.limit + newline;
+	see += "loop: " 		+ button1.loop + newline;
+	see += "playing: " 	+ button1.playing + newline;
+	see += "textLoading: " + button1.textLoading + newline;
+	see += "textPause: " 	+ button1.textPause + newline;
+	see += "textPlay: " 	+ button1.textPlay + newline;
+	see += "volume: " 		+ button1.volume + newline;
+	*/
+
+	var output = document.getElementById("output");
+	output.innerHTML = see;
+
+}
+</script>
+
+
+
+
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>API - onReady 2 option</title>
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+<script>
+
+// Set up a function to "ping" once the player 
+// is set up and ready to be interacted with.
+function doit(playerHandle){
+	
+	// Set the playlist
+	playerHandle.setPlaylist("../song3.mp3|../song1.mp3");
+	
+}
+
+// Create a new player, setting the "media" option 
+// to "none" so no playlist will load at start up 
+// (over-riding the automatic playlist feature).
+//
+// Using the "onReady" player option and setting it 
+// to the "doit" function. Once the player is ready, 
+// the "doit" function will execute.
+new wimpyPlayer({
+					media : "none",
+					onReady : doit
+				});
+
+</script>
+
+
+<!-- Description -->
+<p>Loads a playlist using the "onReady" player option.</p>
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+
+</html>

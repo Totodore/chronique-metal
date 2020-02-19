@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>option - speed</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+<div id="myPlayer" data-wimpyplayer data-media="../song1.mp3" data-speed=2></div>
+
+
+<p>Recommended range is 0.5 to 4.0. Anything outside fo these ranges may get muted.</p>
+<p><strong>Change Speed:</strong></p>
+
+<p>
+	<button onclick='wimpy.getPlayer("myPlayer").setSpeed(0.5)'>1/2</button>
+	<button onclick='wimpy.getPlayer("myPlayer").setSpeed(0.75)'>3/4</button>
+	<button onclick='wimpy.getPlayer("myPlayer").setSpeed(1)'>1x</button>
+	<button onclick='wimpy.getPlayer("myPlayer").setSpeed(2)'>2x</button>
+	<button onclick='wimpy.getPlayer("myPlayer").setSpeed(4)'>4x</button>
+</p>
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

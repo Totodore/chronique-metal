@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>API - getPlaylist</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+
+
+<script>
+
+function resizeAnimated (){
+	
+	// Get a handle to the player
+	var myPlayer = wimpy.getPlayer("myPlayer");
+	
+	// Set up animation
+	myPlayer.setAnimate(500, "ease-in");
+	
+	// Now resize the player
+	myPlayer.setSize(600, 300);
+	
+	// Turn off animation after the resize is complete:
+	setTimeout(turnOffAnimation, 500);
+}
+
+
+function turnOffAnimation(){
+	
+	// Get a handle to the player
+	var myPlayer = wimpy.getPlayer("myPlayer");
+
+	// Cancel animation
+	myPlayer.setAnimate(null);
+}
+
+
+function resizeNormal (){
+
+	// Get a handle to the player
+	var myPlayer = wimpy.getPlayer("myPlayer");
+	
+	// Cancel animation (just in-case)
+	myPlayer.setAnimate(null);
+	
+	// Resize the player
+	myPlayer.setSize(400, 200);
+
+}
+
+</script>
+
+
+
+
+<div id="myPlayer" data-wimpyplayer data-width=300 data-height=100></div>
+
+
+<!-- A simple button to ping the "doit" function. -->
+<p>&nbsp;</p><p><input type="button" onclick="resizeAnimated()" value="Resize Player Animated" /></p>
+<p><input type="button" onclick="resizeNormal()" value="Resize Normal" /></p>
+<p>&nbsp;</p>
+
+
+<!-- Description -->
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

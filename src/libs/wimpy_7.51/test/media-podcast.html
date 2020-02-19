@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>media - podcast</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+
+
+
+
+
+<!-- 
+
+Some other podcasts to check
+http://www.npr.org/rss/podcast.php?id=510292
+http://feeds.thisamericanlife.org/talpodcast
+http://www.subpop.com/rss/podcast
+
+Internally, Wimpy uses the following to parse Podcasts. 
+You can test to see how the actual results are returned 
+from google with the following address. 
+
+Replace PUT_URL_TO_FEED_HERE with the podcast you want to check.
+
+http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&output=json&q=PUT_URL_TO_FEED_HERE
+
+-->
+
+
+
+<div data-wimpyPlayer
+ data-media='{"file":"http://www.npr.org/rss/podcast.php?id=510292", "kind":"rss"}' data-skin="../wimpy.skins/video_player_1.tsv" data-linkEnable></div>
+
+<p>JSON object</p>
+
+
+
+
+
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

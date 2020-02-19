@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>API - getPlaylist</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+
+<script>
+
+
+function doit(){
+
+	// Get a handle to a player using the "myPlayer" ID we 
+	// defined when establishing the Player Instance DIV.
+	var player = wimpy.getPlayer("myPlayer");
+	
+	// Retrieve the player's playlist
+	var playlist = player.getPlaylist();
+	
+	// Set up a string to use to put the data into.
+	var output = "";
+	
+	// Parse the javascript playlist. The returned playlist is 
+	// an array of Track Datasets. Track Datasets are simple 
+	// Javascript Objects. For each item in the playlist, 
+	// get the title and file
+	for(var i=0; i<playlist.length; i++){
+		
+		// Get the next Track Dataset item.
+		var item = playlist[i];
+		
+		// Parse the Track Dataset to the output string.
+		for(var prop in item){
+			
+			// Add a line of text for each property in the Track Dataset.
+			output += prop + " : " + item[prop] + "<br>";
+		}
+		
+	}
+	
+	// Get the HTML element on this page with the "id" of 
+	// "showOuptut" (which is the <pre> tag on this page).
+	var outputElem = document.getElementById("showOuptut");
+	
+	// Set the HTML in the <pre> to the results returned from wimpy.
+	outputElem.innerHTML = output;
+	
+}
+
+</script>
+
+
+
+
+<div id="myPlayer" data-wimpyPlayer data-media="../song1.mp3"></div>
+<p>This Player Instance has the ID set to "myPlayer"</p>
+
+
+
+<!-- A simple button to ping the "doit" function. -->
+<p>&nbsp;</p><p><input type="button" onclick="doit()" value="Get Playlist" /></p><p>&nbsp;</p>
+
+
+<pre id="showOuptut">
+	Results will show up here.
+</pre>
+<!-- Description -->
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

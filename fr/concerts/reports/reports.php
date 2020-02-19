@@ -5,7 +5,7 @@
 <html>
     <head>
         <?php include '../../../src/html/system/init.html'; ?>
-        <title>Reports - Chroniques Métal</title>
+        <title>Reports - Chroniques Metal</title>
         <meta name="description" content="Retrouvez içi tous mes reports écris des différents concerts où je me déplace" />
 		<link rel="stylesheet" type="text/css" media="screen" href="/src/css/texts.css" />
         <script type="text/javascript" src="/src/js/texts.js"></script>

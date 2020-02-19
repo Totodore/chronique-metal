@@ -1,9 +1,17 @@
-<?php 
+<?php
     include '../../src/html/system/init.php';
-    if (!isset($_GET['type']) OR !isset($_GET['id']))
-        header("location:../");
+    require '../../src/libs/Embera/Autoload.php';
+    $config = Array(
+        'params' => Array(
+            'style' => 'display: block; margin: auto',
+            'ignore_tags' => array('a')
+        )
+    );
+    $embera = new \Embera\Embera($config);
     $chronique_query = $bdd->query("SELECT * FROM ".$_GET['type']." WHERE ID='".$_GET['id']."'");
     $chronique = $chronique_query->fetch(0);
+    if (!isset($_GET['type']) OR !isset($_GET['id']) OR !$chronique)
+        header("location:../");
     $array = array('janvier','février','mars' ,'avril' ,'mai' ,'juin' ,'juillet' ,'aout' ,'septembre' ,'octobre' ,'novembre' ,'décembre');
 ?>
 
@@ -27,7 +35,7 @@
                 <article id="article">
                     <h3 class="title_article"><?php echo $chronique['titre']; ?></h3>
                     <div id="text">
-                        <?php echo stripslashes($chronique['text']); ?>
+                        <?php echo $embera->autoEmbed(stripslashes($chronique['text'])); ?>
                         <br />
                         <p class="metadata">
                             <?php 
@@ -51,8 +59,8 @@
             </main>
         <?php include "../../src/html/system/footer.php"; ?>
     </div>
-    <div id="wrapper_comment" method="POST">
-        <form class="form_comment">
+    <div id="wrapper_comment">
+        <form class="form_comment" method="POST">
             <h5>Entrez votre commentaire :</h5>
             <input type="text" placeholder="Pseudonyme" required maxLength="25" name="pseudo" /><br /><br />
             <textarea name="text" required min=10 placeholder="Contenu de votre commentaire :"></textarea><br /><br />

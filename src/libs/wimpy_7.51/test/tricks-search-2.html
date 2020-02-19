@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>DEV simple</title>
+
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+<script>
+// jbeeb.keyboard 20-05-2016 - Required for editable text in wimpy
+this.jbeeb=this.jbeeb||{},function(){"use strict";var a=function(a){this._init(a)},b=a.prototype;b.addEventListener=null,b.removeEventListener=null,b.removeAllEventListeners=null,b.dispatchEvent=null,b.hasEventListener=null,jbeeb.EventDispatcher.initialize(b),a.code={0:48,1:49,2:50,3:51,4:52,5:53,6:54,7:55,8:56,9:57,A:65,B:66,C:67,D:68,E:69,F:70,G:71,H:72,I:73,J:74,K:75,L:76,M:77,N:78,O:79,P:80,Q:81,R:82,S:83,T:84,U:85,V:86,W:87,X:88,Y:89,Z:90,BACKSPACE:8,TAB:9,CLEAR:12,ENTER:13,SHIFT:16,CONTROL:17,ALT:18,CAPS_LOCK:20,ESC:27,SPACEBAR:32,PAGE_UP:33,PAGE_DOWN:34,END:35,HOME:36,ARROW_LEFT:37,ARROW_UP:38,ARROW_RIGHT:39,ARROW_DOWN:40,INSERT:45,DELETE:46,HELP:47,NUM_0:96,NUM_1:97,NUM_2:98,NUM_3:99,NUM_4:100,NUM_5:101,NUM_6:102,NUM_7:103,NUM_8:104,NUM_9:105,NUM_MULTIPLY:106,NUM_ADD:107,NUM_ENTER:108,NUM_SUBTRACT:109,NUM_DECIMAL:110,NUM_DIVIDE:111,F1:112,F2:113,F3:114,F4:115,F5:116,F6:117,F7:118,F8:119,F9:120,F10:121,F11:122,F12:123,F13:124,F14:125,F15:126,NUM_LOCK:144,TILDA:192,SEMI_COLON:186,EQUAL:187,DASH:189,FWD_SLASH:191,BRACKET_LEFT:219,PIPE:220,BRACKET_RIGHT:221,QUOTE:222},b.keycode=null,a._DOWN=null,b._bounded_handleDown=null,b._bounded_handleUp=null,b._elem=null,b.blockAll=!1,b._init=function(b){a._DOWN||(a._DOWN=[]),b=b||window,this._elem=b,this._bounded_handleDown=this._handleDown.bind(this),this._bounded_handleUp=this._handleUp.bind(this),jbeeb.Utils.bindEvent(b,"keydown",this._bounded_handleDown),jbeeb.Utils.bindEvent(b,"keyup",this._bounded_handleUp)},b._handleDown=function(a){this.blockAll&&this.block(a),this._handleEvent(a,"keydown")},b._handleUp=function(a){this.blockAll&&this.block(a),this._handleEvent(a,"keyup")},b._handleEvent=function(b,c){var d=b.which||b.keyCode,e=a._DOWN.indexOf(d);"keyup"==c?e>-1&&a._DOWN.splice(e,1):0>e&&a._DOWN.push(d),this.dispatchEvent(c,b,d,c),this.keycode=d},b.block=function(a){a.preventDefault&&a.preventDefault(),a.stopPropagation&&a.stopPropagation()},b.isDown=function(b){var c;return c=a._DOWN.indexOf("string"==typeof b?a.code[String(b).toUpperCase()]:b),c>-1?1:0},b.alphaNumeric=function(a){return this.numeric(a)?!0:a>64&&91>a||173==a||189==a?!0:!1},b.navigate=function(a){return 8==a||13==a||a>36&&41>a||46==a?!0:!1},b.numeric=function(a){if(this.navigate(a))return!0;for(var b=[16,17,18,224],c=b.length;c--;)if(this.isDown(b[c]))return!1;return 109==a||110==a||173==a||189==a||190==a||a>47&&58>a||a>95&&106>a?!0:!1},b.getCode=function(b){return a.code[String(b).toUpperCase()]},b.destroy=function(){jbeeb.Utils.unbindEvent(this._elem,"keydown",this._bounded_handleDown),jbeeb.Utils.unbindEvent(this._elem,"keyup",this._bounded_handleUp),this._elem=null},b.type="Keyboard",jbeeb.Keyboard=a}();
+</script>
+
+</head>
+<body style="background-color:#efefef">
+
+<!-- Wimpy Player DIV -->
+<div id="myPlayer" data-wimpyPlayer data-skin="../wimpy.skins/Searcher.tsv" data-media="../wimpy.php"></div>
+
+
+
+<!-- Wimpy Player Search Example -->
+<script>
+
+var player;
+var playlist;
+var searchTextBox;
+var searchButton;
+var searchCancel;
+var firstRun = true;
+var originalPlaylist = null;
+
+function setupSearch(e) {
+	if( ! player ){
+		player = wimpy.getPlayer("myPlayer");
+	}
+	searchTextBox = player.getSkinElement("search");
+	searchButton = player.getSkinElement("searchButton");
+	searchCancel = player.getSkinElement("searchCancel");
+	
+	searchTextBox.setEditable(1);
+	searchTextBox.addEventListener("enter", search);
+	
+	searchButton.addMEL(
+					"mouseDown", // The event to listen for.
+					search, 	// The function we want to ping
+					this 		// the "search" function is in the "window" scope, or "this" for short.
+				);
+
+	searchCancel.addMEL(
+					"mouseDown", 		// The event to listen for.
+					restorePlaylist, 	// The function we want to ping
+					this 				// the "restorePlaylist" function is in the "window" scope, or "this" for short.
+				);
+	
+}
+
+function restorePlaylist(){
+	if(originalPlaylist){
+		player.setPlaylist(originalPlaylist);
+	} else {
+		player.setPlaylist("../wimpy.php");
+	}
+	searchTextBox.setText("Search");
+	searchTextBox.element.blur(); // remove focus from text box.
+}
+
+
+function search(){
+	
+	// Get the value of the entered text
+	var cleanText = searchTextBox.text;
+	
+	searchTextBox.element.blur(); // remove focus from text box.
+
+	// Only if there is something in the search field.
+	if(cleanText.length){
+
+		playlist = player.getPlaylist();
+
+		// Snag a copy of the original playlist so we can re-populate it later (if needed);
+		if(firstRun){
+			originalPlaylist = playlist.slice();
+			firstRun = false;
+		}
+
+		if(cleanText){
+			
+			cleanText = cleanText.toLowerCase();
+
+			var searchResults = [];
+
+			var gotoIndex = -1;
+			for(var i=0; i<playlist.length; i++){
+				item = playlist[i];
+
+				// Since we're just looking for text that matches we can jam all the 
+				// text for the fields we want to search against into one long string
+				// then just look for a match on the long string as opposed to searching
+				// each individual field one-at-a-time.
+				var gang = (item.title + item.artist + item.album + item.file).toLowerCase();
+
+				if( gang.indexOf(cleanText) > -1 ){
+					searchResults.push(item);
+				}
+				
+			}
+
+			if(searchResults.length){
+				player.setPlaylist(searchResults);
+			}
+
+		}
+		
+	} else {
+		restorePlaylist();
+	}
+
+}
+
+wimpy.onReady(setupSearch);
+
+</script>
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

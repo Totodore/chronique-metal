@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>Button - API - setMedia</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+
+
+<!-- A simple button style -->
+<style type="text/css">
+
+.MyButtonStyle {
+
+	background-color: #C6C6C6;
+	width: 200px;
+	height: 60px;
+	
+	/*vertical align text using line-height = regular height*/
+	line-height : 60px; 
+	text-align: center;
+	font-size: 18px;
+	border: 1px solid #000;
+	
+	/*center button on page using auto margin-left/right*/
+	margin-left: auto; 
+	margin-right: auto;
+	
+}
+
+</style>
+
+<!-- Button Instance -->
+<div id="myElementID" 
+class="MyButtonStyle" 
+data-playText="Click play here now!"
+data-pauseText="pause"
+data-loadingText="loading"
+data-wimpyButton="../song1.mp3"></div>
+
+
+<p>&nbsp;</p><p><input type="button" onclick="wimpyButton.setMedia('myElementID', '../song1.mp3')" value="Set song1.mp3" /></p>
+
+
+<p><input type="button" onclick="wimpyButton.setMedia('myElementID', '../song3.mp3', true)" value="Set song3.mp3 and play immediately" /></p><p>&nbsp;</p>
+
+
+
+
+<!-- Description -->
+<p>A track is already loaded when this page laods, so you can click play right away. Clicking the first button will allow the current track to continue playing, but will change the source, so next time it plays the new source will play.</p>
+
+
+
+
+
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>inchworm</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+<div data-wimpyplayer data-skin="../wimpy.skins/align-right.tsv" data-media="../song1.mp3|../song2.mp3|../song3.mp3"></div>
+
+
+<script>
+
+(function(){
+
+	//var playerID = "myPlayer";
+	var storagePrefix = "wimpy_";
+
+	var lastTime = 0;
+	function monitor(player, activity, playerState, amScrubbing){
+		if(playerState){
+			localStorage.setItem(storagePrefix + "playerid", player.id);
+	  		localStorage.setItem(storagePrefix + "time", playerState.current);
+		}
+	}
+
+	function didPlay(trackDataset){
+	  localStorage.setItem(storagePrefix + "file", trackDataset.file);
+	  localStorage.setItem(storagePrefix + "index", trackDataset.i);
+	}
+
+	function startMonitoring(){
+		player.addListener("runtime", monitor);
+		player.addListener("play", didPlay);
+	}
+
+	function watchLoading(obj){
+		if(obj.percent >= 0.9){
+			player.setTime(last.time);
+			controller.removeEventListener("loading", watchLoading);
+			startMonitoring();
+		}
+	}
+
+	var player;
+	var controller;
+	var last;
+	wimpy.onReady(function(){
+
+		if(typeof playerId != 'undefined'){
+			player = wimpy.getPlayer("myPlayer");
+		} else {
+			player = wimpy.getPlayerList()[0];
+		}
+
+		last = {
+			playerid 	: localStorage.getItem(storagePrefix + "playerid"),
+	  		time 		: Number(localStorage.getItem(storagePrefix + "time")) || 0, // localStorage converts Numbers to strings
+	   	 	file 		: localStorage.getItem(storagePrefix + "file"),
+	  		index 		: Number(localStorage.getItem(storagePrefix + "index")) || 0 // localStorage converts Numbers to strings
+		}
+
+		if(last.file){
+			controller = player.getMediaController();
+			controller.addEventListener("loading", watchLoading);
+			player.gotoTrack(last.index+1, true);
+		} else {
+			startMonitoring();
+		}
+
+	});
+
+}());
+
+
+</script>
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

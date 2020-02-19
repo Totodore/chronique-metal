@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Inclusion dynamique</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div style="margin: auto; width: -moz-fit-content; width: fit-content; margin-top: 100px">
+        <form method="POST" action="./scap.php">
+            <input required name="url" type="url" placeholder="Lien de l'article de l'ancien site" /><br /><br />
+            <input required name="author" type="text" placeholder="Nom de l'auteur" /><br /><br />
+            <select name="type">
+                <option>chroniques</option>
+                <option>concerts</option>
+                <option>interviews</option>
+            </select><br /><br />
+            <input type="submit" value="Valider"/>
+        </form>
+    </div>
+</body>
+</html>

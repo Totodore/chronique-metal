@@ -1,14 +1,5 @@
 <?php 
     include '../system/init.php';
-    $currentPage = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-
-    if ($_SERVER['REQUEST_METHOD'] == "GET" && strcmp(basename($currentPage), basename(__FILE__)) == 0)
-    {
-        http_response_code(404);
-        header("Location: /");
-        die(); /* remove this if you want to execute the rest of
-                the code inside the file before redirecting. */
-    }
     
     $list_photos = $bdd->query("SELECT * FROM photos ORDER BY date DESC");
     $array = array('janvier','février','mars' ,'avril' ,'mai' ,'juin' ,'juillet' ,'aout' ,'septembre' ,'octobre' ,'novembre' ,'décembre');
@@ -25,7 +16,7 @@
     $photos = array_slice($photos_prep, $from, 3);  //qu'on coupe par groupe de 3
 ?>
 <?php foreach($photos as $key => $photo) {?>  <!-- Pour chaque albums ds la bdd-->
-    <div class="disp_photos" last="<?php echo $last; ?>">
+    <div class="disp_photos">
         <h4 class="title_photos"><?php echo $photo['titre']; ?></h4>
         <div id="wrapper_photos">
             <ul class="slider">

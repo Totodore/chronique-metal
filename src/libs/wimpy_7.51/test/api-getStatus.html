@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>API - getStatus</title>
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+<!-- Results will appear within this DIV -->
+<div id="showStatusID"></div>
+
+<!-- Wimpy Player Instance -->
+<div id="myPlayerID" data-wimpyplayer></div>
+
+<script>
+
+// Plce variables here on the window so all functions have access to them.
+
+var player;
+var statusView;
+
+function pollPlayer(){
+	
+	var info = player.getStatus();
+	
+	var displayText = "";
+	displayText += "Enabled: " 		+ info.enabled 		+ "<br/>";
+	displayText += "Initialized: " 	+ info.init 		+ "<br/>";
+	displayText += "Status: " 		+ info.status 		+ "<br/>";
+	displayText += "Activity: " 	+ info.activity 	+ "<br/>";
+	displayText += "Playing: " 		+ info.playing 		+ "<br/>";
+	displayText += "Percent: " 		+ info.percent 		+ "<br/>";
+	displayText += "Duration Nice: " 	+ info.duration_nice 	+ " Raw Seconds: " + info.duration 	+ "<br/>";
+	displayText += "Remaining Nice: " 	+ info.remaining_nice 	+ " Raw Seconds: " + info.remaining + "<br/>";
+	displayText += "Current Nice: " 	+ info.current_nice 	+ " Raw Seconds: " + info.current 	+ "<br/>";
+	
+	statusView.innerHTML = displayText;
+
+}
+
+function setup(){
+
+	// Get a handle to the player that has the DIV id set to "myPlayerID"
+	player = wimpy.getPlayer("myPlayerID");
+
+	// Get a handle to the DIV we're using to report the values.
+	statusView = document.getElementById("showStatusID");
+
+	// Set up a ticker to retrieve the values at regular intervals.
+	// poll every 500 milliseconds (1/2 seconds)
+	setInterval(pollPlayer, 500); 
+
+}
+
+// Call our setup function when wimpy is ready. If we don't wait 
+// until wimpy has set up all the players, we'll get errors.
+wimpy.onReady(setup);
+
+
+</script>
+
+
+<!-- Description -->
+<p>Show the status of player.</p>
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+
+</html>

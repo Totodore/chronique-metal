@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>Button - text via option</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+<!-- A simple box style -->
+<style type="text/css">
+ 
+.simpleDivButton, .simpleDivButton:link, .simpleDivButton:hover, .simpleDivButton:visited {
+ 
+	display:inline-block;
+	background-color: #30AFFF;
+	
+	border-radius: 12px;
+	
+	border: 2px solid #9ED4F7;
+	color: #FFFFFF;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+	/*vertical align text using line-height = font-size (don't specify traditional width/height) */
+	line-height : 20px;
+	
+	/*center button on page using auto margin-left/right*/
+	margin-left: auto; 
+	margin-right: auto;
+	margin-top: 10px;
+	padding:10px 20px 10px 20px; /* top right bottom left (t r b l = trouble) */
+	
+	cursor:pointer; /* mouse, so we don't get the text select when over */
+	
+}
+.simpleDivButton:active {
+	border: 6px solid #FFFFFF;
+	background-color: #68C4FF;
+	/* reduce padding to compensate for the 4px difference between border size */
+	padding:6px 16px 6px 16px; /* top right bottom left (t r b l = trouble) */
+}
+ 
+</style>
+
+<div class="simpleDivButton" onclick="wimpyButton.play('../song3.mp3')">play</div>
+<div class="simpleDivButton" onclick="wimpyButton.stop()">stop</div>
+<div class="simpleDivButton" onclick="wimpyButton.pause()">pause</div>
+
+<p>&nbsp;</p>
+
+<!-- Description -->
+<p>Using the API to play / pause / stop</p>
+<p>&nbsp;</p>
+
+
+
+
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>

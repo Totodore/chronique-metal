@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<title>API - getPlaying</title>
+
+<link href="_styles.css" rel="stylesheet" type="text/css">
+<script src="_prettify.js"></script>
+<script src="_test-stuff.js"></script>
+
+<!-- Wimpy Engine -->
+<script src="../wimpy.js"></script><script src="wimpy.js"></script>
+
+
+</head>
+<body onload="pageReady()">
+<div id="mainMenu"></div>
+<div id="pageWrapper" class="pageWrapper">
+
+
+
+
+
+<!-- Create a player -->
+<div id="player1" data-wimpyplayer data-media="../song1.mp3|../song2.mp3"></div>
+
+
+<!-- A simple button to ping the "doit" function. -->
+<button onclick="checkPlaying()">Check Playing</button>
+
+<script>
+
+// Put variable on the window scope so all function have access to the var.
+var player;
+
+// The function to edit the "live" playlist
+function checkPlaying(){
+
+	if( ! player ){
+		player = wimpy.getPlayer("player1");
+	}
+	
+	// The alert should show a 1 or a 0, where 1=playing and 0 = paused/stopped/not playing
+	alert ( player.getPlaying() );
+
+}
+
+</script>
+
+
+
+<!-- Description -->
+<p> Check to see if the player is playing or not.</p>
+
+
+
+</div> <!-- close pageWrapper -->
+</body>
+</html>
