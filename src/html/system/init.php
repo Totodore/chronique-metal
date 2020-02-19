@@ -22,5 +22,4 @@
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
     }
-    include 'rm_radio.php';
 ?>

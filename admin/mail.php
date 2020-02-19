@@ -9,11 +9,7 @@
     require_once ($_SERVER["DOCUMENT_ROOT"].'/../src/libs/PHPMailer/src/Exception.php');
     $str = Array();
     $mails = $bdd->query('SELECT * from notifications');
-    if ($_GET['subject'] == 'radio') {
-        $text_to_add = "Je suis en Live sur Radio Metal Sound : https://chronique-metal.fr/fr/live-radio/, n'hésite pas à faire un tour pour nous écouter et nous passer le bonjour sur le discord officiel de la radio : https://discord.gg/rzx3MhP";
-        $subject = "Live sur Radio Metal Sound !";
-    }
-    else if ($_GET['subject'] == 'chroniques') {
+    if ($_GET['subject'] == 'chroniques') {
         $text_to_add = "Sache qu'une nouvelle chronique est disponible, tu pourras la lire ici : https://chronique-metal.fr/fr/read/?id=".$_GET['id']."&type=".$_GET['subject'];
         $subject = "Nouvelle chronique disponible !";
     }

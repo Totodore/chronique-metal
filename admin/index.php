@@ -45,12 +45,10 @@
         <h1 class="title">Page d'administration :</h1>
         <main id="main">
             <a href="./add_operations/add_photos.php">Ajouter un album photo lors d'un concert</a>
-            <a href="./add_operations/add_radio.php">Paramétrer des horaires de passage en live radio</a>
             <a href="./add_operations/add_radio_chronique.php">Ajouter un lien vers un article provenant de Radio Metal Sound</a>
             <a href="./add_operations/add_sponsort.php">Ajouter un sponsors</a>
             <a href="./add_operations/">Ajouter un type de document</a>
             <a href="./post_operations/">Editer ou Supprimer</a>
-            <a href="./mail.php?subject=radio">Notifier tout le monde que je suis en live !</a>
             <a href="https://chronique-metal.fr">Revenir au site de Chronique Metal</a>
         </main>
     </body>

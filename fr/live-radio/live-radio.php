@@ -1,49 +1,11 @@
 <?php 
     include '../../src/html/system/init.php';
-    function objToArray($obj) {
-        $array = Array( //on fait ca pour pvr le stocker ensuite dans une autre array
-            'name' => $obj['name'],
-            'time_start' => $obj['time_start'],
-            'time_end' => $obj['time_end'],
-            'duration' => $obj['duration'],
-            'day' => $obj['day'],
-            'date' => $obj['date'],
-            'ID' => $obj['ID']
-        );
-        return $array;
-    }
-    $live_program = $bdd->query("SELECT * FROM live_programme");
     $last_articles = $bdd->query("SELECT * FROM last_chronique")->fetchAll();
     $return = usort($last_articles, function($a, $b) {
         if (strtotime($a["date"]) < strtotime($b["date"]))
             return 1;
         else return -1;
     });
-    $pre_render = Array();  //Array stockant les bons horaires
-    $day = Array();
-    $frenchDays = Array(
-        0 => "Dimanche",
-        1 => "Lundi",
-        2 => "Mardi",
-        3 => "Mercredi",
-        4 => "Jeudi",
-        5 => "Vendredi",
-        6 => "Samedi"
-    );
-    while ($line = $live_program->fetch()) {
-        if ($line['day'] != "") {//si c'est un horaire regulie ca passe
-            array_push($pre_render, objToArray($line));
-            array_push($day, $line['day']);   //on get aussi le jour de la semaine
-        }
-        else {
-            $start = strtotime($line['date']." ".$line['time_start']);    //on recup le timestamp de l'horaire de debut
-            if ($start < strtotime('Monday') AND $start > strtotime('Sunday')) {    //si celui-ci est compris dans la semaine
-                array_push($pre_render, objToArray($line));   //il passe
-                array_push($day, $frenchDays[date('w', strtotime($line['date']))]); //on recup le jour de la semaine avec l'index de date();
-            }
-        }
-    }
-
 ?>
 <!DOCTYPE html>
 <html>
