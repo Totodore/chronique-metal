@@ -1,8 +1,8 @@
 <?php
     // Afficher les erreurs à l'écran
-    ini_set('display_errors', 1);
+    // ini_set('display_errors', 1);
     // Enregistrer les erreurs dans un fichier de log
-    ini_set('log_errors', 1);
+    // ini_set('log_errors', 1);
 ?>
 <?php 
     function console_log($data)

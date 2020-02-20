@@ -15,7 +15,7 @@
     $client->setDeveloperKey($DEVELOPER_KEY); //on met la cle de securite
     $youtube = new Google_YoutubeService($client);    //On recup le service yt
     $response = $youtube->playlistItems->listPlaylistItems('snippet, contentDetails', array(  //on recup toutes la playlist
-        "playlistId" => "PLNBLxZIFO1N1Q1S_KLnOCiliV_kCq-TqO", //chronique metal
+        "playlistId" => "PLDewruxr2Vz5khwa6r5ob1rY9I4CYda4E", //chronique metal
         "maxResults" => 5
     )); //max result 50
     //  Pour chaque videos qui marchent
