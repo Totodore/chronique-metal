@@ -12,7 +12,7 @@
     <head>
         <?php include '../../src/html/system/init.html'; ?>
         <title>Radio Metal Sound - Chroniques Metal</title>
-        <meta name="description" content="Retrouvez içi la Web Radio dans la quelle je passe régulièrement pour parler métal" />
+        <meta name="description" content="Radio Metal Sound est maintenant une chaine Youtube ! Retrouvez leurs vidéos ici !" />
         <link rel="stylesheet" type="text/css" media="screen" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="/src/css/live_radio.css" />
         <script src="/src/js/live_radio.js"></script>
