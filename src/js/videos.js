@@ -6,7 +6,7 @@ $(function() {
     });
     requestAjax();
     
-})
+});
 var from = 0;
 function requestAjax() {
     console.log("Ajax request...");
@@ -33,6 +33,7 @@ function requestAjax() {
                 $(document).unbind("scroll");   //si ya plus rien on desactive l'evenement
             else {
                 $(".ajax_status").prev().append(data); //on affiche les albums
+                $(".title_video").click(dispVideo);
                 from += 4;  //on ajoute l'echelle a l'offset
                 $(document).delay(2000).on("scroll", function() { //on attend avant de reactiver l'event pour pas que sa foire
                     if ((this.documentElement.scrollTop + this.documentElement.clientHeight - this.documentElement.scrollHeight) > -100) {
@@ -50,4 +51,18 @@ function requestAjax() {
             }
         }
     });
+}
+function dispVideo() {
+    hideOthersVideos();
+    console.log($(window).width());
+    if ($(window).width() > "800") {
+        $(this).parent().css("height", "600px");
+    } else {
+        $(this).parent().css("height", "435px");
+    }
+    $(this).siblings().css("opacity", 1);
+}
+function hideOthersVideos() {
+    $(".disp_video").css("height", "71px");
+    $(".video_frame").css("opacity", 0);
 }

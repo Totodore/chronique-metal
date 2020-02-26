@@ -9,6 +9,7 @@ $(function() {
         $(".ajax_status").fadeOut(100);
         $("#disp_videos").append(data);
         $("#disp_videos").children().last().fadeIn(400);
+        $(".title_video").click(dispVideo);
     }).fail(() => {
         $(".ajax_status").fadeOut(100);
         $("#disp_videos").append("<div id=error_radio><span class=error_title>Une erreur est apparue lors de la récupération des vidéos</span></div>");
@@ -32,4 +33,18 @@ function closeModal() {
     $("#overlay").removeAttr("style");  //on degage tout ce qu'on a cree precedemment
     $("#modal_discord").removeAttr("style");
     $("#modal_discord").children().remove();   //et on degage le clone de slider
+}
+function dispVideo() {
+    hideOthersVideos();
+    console.log($(window).width());
+    if ($(window).width() > "800") {
+        $(this).parent().css("height", "600px");
+    } else {
+        $(this).parent().css("height", "435px");
+    }
+    $(this).siblings().css("opacity", 1);
+}
+function hideOthersVideos() {
+    $(".disp_video").css("height", "71px");
+    $(".video_frame").css("opacity", 0);
 }

@@ -31,7 +31,14 @@
 	box-shadow: 13px 13px 15px 1px rgba(0,0,0,0.75);
 	border-radius: 5px;
     background-color: rgba(43, 43, 43, 1);
-    height: 700px;
+    height: 71px;
+    transition: all 300ms;
+    cursor: pointer;
+    transition: all 300ms;
+
+}
+.disp_video:hover {
+    transform: translate(0px, -10px);
 }
 .title_video
 {
@@ -48,11 +55,14 @@
     overflow: hidden;
     white-space: nowrap;
     justify-content: space-between;
+    margin-bottom: 0;
 }
 .video_frame 
 {
     width: 100%;
     height: 77%;
+    opacity: 0;
+    transition: all 300ms;
 }
 /* !!! LOADER !!! */
 @keyframes lds-dual-ring {
@@ -111,10 +121,6 @@
 @media only screen and (max-width: 800px) {
     .title_article {
         font-size: 5vw;
-    }
-    .disp_video {
-        height: auto;
-        widows: 95%;
     }
     .title_video {
         font-size: 0.9em;
